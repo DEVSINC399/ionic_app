@@ -1,14 +1,79 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar navbar-primary>
     <ion-title>
-      Ionic Blank
+        Welcome
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content style="margin-top:15px;">
+  <ion-list>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-lg-6 col-md-6 col-xs-12 col-sm-12 class="plan-left">
+            <ion-card class="cards" (click)="getWasteRequest()">
+                <ion-card-header class="card1-header">
+                   <ion-card-title class="card-heading">
+                     <ion-icon name="basket"></ion-icon>
+                     Dry Waste Request  
+                  </ion-card-title> 
+                </ion-card-header>
+                
+                <ion-card-content class="card1-body">
+                  Keep close to Nature's heart...
+                 
+                </ion-card-content>
+              </ion-card>
+        </ion-col>
+        <ion-col col-lg-6 col-md-6 col-xs-12 col-sm-12 class="plan-left">
+            <ion-card class="cards" (click)="getSponsershipsRequest()">
+                <ion-card-header class="card1-header">
+                  <ion-card-title class="card-heading">
+                    <ion-icon id="crd-logo" name="card"></ion-icon>
+                    Sponsorships Request
+                  </ion-card-title>
+                </ion-card-header>
+                
+                <ion-card-content class="card1-body">
+                  Keep close to Nature's heart...
+                 
+                </ion-card-content>
+              </ion-card>
+        </ion-col>
+      </ion-row>
+        <ion-row>
+          <ion-col col-lg-6 col-md-6 col-xs-12 col-sm-12 class="plan-left">
+              <ion-card class="cards" (click)="getDonationsRequest()">
+                  <ion-card-header class="card1-header">
+                    <ion-card-title class="card-heading">
+                      <ion-icon id="crd-logo" name="cash"></ion-icon>
+                      Donations Request
+                    </ion-card-title>
+                  </ion-card-header>
+                  
+                  <ion-card-content class="card1-body">
+                    Keep close to Nature's heart...
+                   
+                  </ion-card-content>
+                </ion-card>
+          </ion-col>
+          <ion-col col-lg-6 col-md-6 col-xs-12 col-sm-12 class="plan-left">
+              <ion-card class="cards" (click)="getLoginDetails()">
+                  <ion-card-header class="card1-header">
+                    <ion-card-title class="card-heading">
+                      <ion-icon name="contacts" id="crd-logo" item-left></ion-icon>
+                      <span>Log In</span>
+                    </ion-card-title>
+                  </ion-card-header>
+                  
+                  <ion-card-content class="card1-body">
+                   Don't have Account?
+                   
+                  </ion-card-content>
+                </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+
 </ion-content>

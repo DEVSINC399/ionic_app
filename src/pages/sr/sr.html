@@ -1,0 +1,103 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Sponsorships Request</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="margin-top:15px;">
+   
+    <ion-list>  
+
+        <ion-item>
+          <ion-label floating padding-left><ion-icon name="person" style="margin-right: 3px;"></ion-icon>Donor Name *</ion-label>
+         <ion-input type="text" class="input-fields"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label floating padding-left><ion-icon name="pin" style="margin-right: 3px;"></ion-icon>Address *</ion-label>
+           <ion-input type="text" class="input-fields"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating padding-left><ion-icon name="card" style="margin-right: 3px;"></ion-icon>CNIC *</ion-label>
+           <ion-input type="text" class="input-fields"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating padding-left><ion-icon name="call" style="margin-right: 3px;"></ion-icon>Telephone Number</ion-label>
+           <ion-input type="text" class="input-fields"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating padding-left><ion-icon name="call" style="margin-right: 3px;"></ion-icon>Cell Number *</ion-label>
+           <ion-input type="text" class="input-fields"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating padding-left><ion-icon name="mail" style="margin-right: 3px;"></ion-icon>Email</ion-label>
+           <ion-input type="email" class="input-fields"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating padding-left><ion-icon name="person" style="margin-right: 3px;"></ion-icon>No. of Child *</ion-label>
+           <ion-input type="text" class="input-fields"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating padding-left><ion-icon name="person" style="margin-right: 3px;"></ion-icon>Fee per Child *</ion-label>
+           <ion-input type="text" class="input-fields"></ion-input>
+        </ion-item>
+        </ion-list>
+
+        <ion-label padding-left><ion-icon name="pin" style="margin-right: 3px;"></ion-icon>Area *</ion-label>
+        <ion-list>
+          <ion-item>
+            <ion-select class="input-fields" placeholder="Select Currency Type">
+            <ion-option value="1">DHA</ion-option>
+            <ion-option value="2">Workshop</ion-option>
+            <ion-option value="3">Askari</ion-option>
+         
+          </ion-select>
+        </ion-item>
+      </ion-list>
+  
+     <ion-label padding-left><ion-icon name="cash" style="margin-right: 3px;"></ion-icon>Currency *</ion-label>
+        <ion-list>
+          <ion-item>
+            <ion-select class="input-fields" placeholder="Select Currency Type">
+            <ion-option value="1">Rupees</ion-option>
+            <ion-option value="2">Dollar</ion-option>
+            <ion-option value="3">Euro</ion-option>
+         
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-label padding-left><ion-icon name="cash" style="margin-right: 3px;"></ion-icon>Donation Type *</ion-label>
+      <ion-list>
+          <ion-item>
+            <ion-select class="input-fields" placeholder="Select Payment Method">
+            <ion-option value="1">Sadqat</ion-option>
+            <ion-option value="2">Zakat</ion-option>
+            </ion-select>
+          </ion-item>
+      </ion-list>
+
+    <ion-label padding-left><ion-icon name="cash" style="margin-right: 3px;"></ion-icon>Payment Method *</ion-label>
+        <ion-list>
+            <ion-item>
+              <ion-select class="input-fields" placeholder="Select Payment Method">
+              <ion-option value="1">Online Transfer</ion-option>
+              <ion-option value="2">Cash Payment</ion-option>
+              <ion-option value="3">Cross Cheque</ion-option>
+              </ion-select>
+            </ion-item>
+        </ion-list>
+  
+   
+      <button ion-button block secondary class="blue-button">Send Request</button>
+</ion-content>
+<ion-footer fixed>
+    <img src="assets/imgs/app.png">
+  </ion-footer>

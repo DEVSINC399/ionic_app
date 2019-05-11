@@ -1,3 +1,83 @@
 page-home {
+    .content{
+        background: #f4f4f4;
+    }
+    .cards{
+        border-radius: 7px;
+    }
 
+    // .card-heading{
+    //     color:white !important;
+    //  font-size: 18px;
+    //     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    // }
+    .card-heading{
+        color:#0A6FB7 !important;
+     font-size: 18px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    }
+
+    #crd-logo{
+        &:before{
+            font-size: 30px;
+        }
+    }
+
+    // #crd-text{
+    //     font-size: 20px;
+    //     color: white;
+    // }
+    #crd-text{
+        font-size: 20px;
+        color: #0A6FB7;
+    }
+    .card-heading{
+        font-size: 20px;
+    }
+
+    // .card1-header{
+    //     background:	#008000;
+    // }
+    // .card1-body{
+    //     padding-top: 7px !important;
+    //     color: aliceblue;
+    //     background:	#006400;
+    // }
+  
+    .card1-header{
+        background: white;
+        border-bottom: rgb(106, 107, 107) 1px solid;
+    }
+    .card1-body{
+        padding-top: 7px !important;
+        color: rgb(106, 107, 107);
+        background:white;
+    }
+    // .card2-header{ 
+    //     background:	rgb(219, 187, 3);
+    // }
+    // .card2-body{
+    //     padding-top: 7px !important;
+    //     color: aliceblue;
+    //     background:	#a7a703;
+    // }
+    // .card3-header{
+    //     background:#a50404;
+    // }
+    // .card3-body{
+    //     padding-top: 7px !important;
+    //     color: aliceblue;
+    //     background:	#800000;
+    // }
+    // .card4-header{
+    //     background:	#8B008B;
+    // }
+    // .card4-body{
+    //     padding-top: 7px !important;
+    //     color: aliceblue;
+    //     background:	#610161;
+    // }
 }
+

@@ -1,1 +1,36 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="nav">
+  <ion-header style="background-color:#0A6FB7">
+            <ion-toolbar>
+              <ion-row>
+                  <ion-col></ion-col>
+                  <ion-col>
+                      <img src="assets/imgs/teamwork.png" style="margin-top:30px;">
+                  </ion-col>
+                  <ion-col></ion-col>
+              </ion-row>
+            
+              <h4 text-center>User Name</h4>
+            </ion-toolbar>
+          </ion-header>
+
+    <ion-content style="background: #0A6FB7 !important;">
+
+      <ion-list>
+        <button class="colored-content" ion-item (click)="onLoad(homePage)" class="menu_options">
+          <ion-icon name="home"></ion-icon>
+          Home
+        </button>
+        <button ion-item (click)="onLoad(profilePage)" class="menu_options">
+          <ion-icon name="contact"></ion-icon>
+          Profile
+        </button>
+        <button ion-item (click)="presentConfirm()" class="menu_options">
+          <ion-icon name="log-out"></ion-icon>
+          Logout
+        </button>
+      </ion-list>
+    </ion-content>
+</ion-menu>
+  
+  <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+  <ion-nav [root]="homePage" #nav></ion-nav> 

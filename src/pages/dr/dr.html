@@ -1,0 +1,110 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Donations Request</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="margin-top:15px;">
+
+    <ion-list>  
+
+        <ion-item>
+          <ion-label floating padding-left><ion-icon name="person" style="margin-right: 3px;"></ion-icon>Donor Name *</ion-label>
+         <ion-input type="text" class="input-fields"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+            <ion-label floating padding-left><ion-icon name="pin" style="margin-right: 3px;"></ion-icon>Address *</ion-label>
+           <ion-input type="text" class="input-fields"></ion-input>
+        </ion-item>
+
+         <!-- <ion-item> 
+             <ion-label floating padding-left><ion-icon name="person" style="margin-right: 3px;"></ion-icon>Donor Type *</ion-label> 
+              <ion-list>
+                 <ion-list-header><ion-icon name="person" style="margin-right: 3px;"></ion-icon>Donor Type *</ion-list-header>
+                <ion-item class="input-fields">
+                    <ion-label>Select</ion-label>
+                    <ion-select class="input-fields">
+                     <ion-option value="1">1 Month</ion-option>
+                     <ion-option value="2">1 Quarter</ion-option>
+                     <ion-option value="3">1 Year</ion-option>
+                     <ion-option value="4">2 Months</ion-option>
+                     <ion-option value="5">2 Years</ion-option>
+                     <ion-option value="6">4 Months</ion-option>
+                     <ion-option value="7">5 Months</ion-option>
+                     <ion-option value="8">Half Yearly</ion-option>
+                  </ion-select>
+                </ion-item>
+              </ion-list>   
+        </ion-item> -->
+
+       <ion-item>
+           <ion-label floating padding-left><ion-icon name="call" style="margin-right: 3px;"></ion-icon>Telephone Number</ion-label>
+          <ion-input type="number" class="input-fields"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label floating padding-left><ion-icon name="call" style="margin-right: 3px;"></ion-icon>Cell Number *</ion-label>
+           <ion-input type="number" class="input-fields"></ion-input>
+         </ion-item>
+    
+         <ion-item>
+            <ion-label floating padding-left><ion-icon name="cash" style="margin-right: 3px;"></ion-icon>Amount *</ion-label>
+            <ion-input type="number" class="input-fields"></ion-input>
+         </ion-item>
+
+        <!-- <ion-list>
+            <ion-item class="input-fields">
+                <ion-label padding-left><ion-icon name="cash" style="margin-right: 3px;"></ion-icon>Payment Method *</ion-label> 
+                  
+                    <ion-select  placeholder="Select" block>
+                      <ion-option value="1">Online Transfer</ion-option>
+                     <ion-option value="2">Cash Payment</ion-option>
+                     <ion-option value="3">Cross Cheque</ion-option>
+                  </ion-select>
+                </ion-item>
+        </ion-list> -->
+
+        <ion-label padding-left><ion-icon name="person" style="margin-right: 3px;"></ion-icon>Donor Type *</ion-label>
+        <ion-list>
+          <ion-item>
+            <ion-select class="input-fields" placeholder="Select Donor Type">
+                <ion-option value="1">1 Month</ion-option>
+                <ion-option value="2">1 Quarter</ion-option>
+                <ion-option value="3">1 Year</ion-option>
+                <ion-option value="4">2 Months</ion-option>
+                <ion-option value="5">2 Years</ion-option>
+                <ion-option value="6">4 Months</ion-option>
+                <ion-option value="7">5 Months</ion-option>
+                <ion-option value="8">Half Yearly</ion-option>
+         
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-label padding-left><ion-icon name="cash" style="margin-right: 3px;"></ion-icon>Payment Method *</ion-label>
+        <ion-list>
+            <ion-item>
+              <ion-select class="input-fields" placeholder="Select Payment Method">
+              <ion-option value="1">Online Transfer</ion-option>
+              <ion-option value="2">Cash Payment</ion-option>
+              <ion-option value="3">Cross Cheque</ion-option>
+              </ion-select>
+            </ion-item>
+        </ion-list>
+
+    </ion-list>
+    <ion-list>
+         <ion-item>
+            <ion-label floating padding-left><ion-icon name="create" style="margin-right: 3px;"></ion-icon>Remarks</ion-label>
+            <ion-textarea class="input-fields"></ion-textarea> 
+         </ion-item>
+
+     </ion-list>
+      <button ion-button block secondary class="blue-button">Send Request</button>
+        
+</ion-content>
+<ion-footer fixed>
+  <img src="assets/imgs/app.png">
+</ion-footer>

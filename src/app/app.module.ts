@@ -6,25 +6,70 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { DwrPage } from '../pages/dwr/dwr';
+import { SrPage } from '../pages/sr/sr';
+import { DrPage } from '../pages/dr/dr';
+import { LoginPage } from '../pages/login/login';
+import { MainscreenPage } from '../pages/mainscreen/mainscreen';
+import { ProfilePage } from '../pages/profile/profile';
+import { ResultsPage } from '../pages/results/results';
+import { ReceiptsPage } from '../pages/receipts/receipts';
+import { AdmissionformsPage } from '../pages/admissionforms/admissionforms';
+import { MonthlyreceiptspaymentPage } from '../pages/monthlyreceiptspayment/monthlyreceiptspayment';
+import { PaymentreceiptPage } from '../pages/paymentreceipt/paymentreceipt';
+import { StudentresultsPage } from '../pages/studentresults/studentresults';
+import { ResultPage } from '../pages/result/result';
+import { AdmissionformPage } from '../pages/admissionform/admissionform';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    DwrPage,
+    SrPage,
+    DrPage,
+    LoginPage, 
+    MainscreenPage,
+    ProfilePage,
+    ResultsPage,
+    ReceiptsPage,
+    AdmissionformsPage,
+    MonthlyreceiptspaymentPage,
+    PaymentreceiptPage, 
+    StudentresultsPage,
+    ResultPage,
+    AdmissionformPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp)
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    DwrPage,
+    SrPage,
+    DrPage,
+    LoginPage,
+    MainscreenPage, 
+    ProfilePage,
+    ResultsPage,
+    ReceiptsPage,
+    AdmissionformsPage,
+    MonthlyreceiptspaymentPage, 
+    PaymentreceiptPage, 
+    StudentresultsPage,
+    ResultPage, 
+    AdmissionformPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthServiceProvider
   ]
 })
 export class AppModule {}

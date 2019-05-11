@@ -1,0 +1,108 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Payment Receipt</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="receipt-content">
+  
+    <ion-fab bottom right >
+        <button ion-fab (click)="gotoMainScreen()"><ion-icon name="home"></ion-icon></button>
+      </ion-fab>
+
+    <ion-row class="thanks-row">
+      <ion-col></ion-col>
+        <ion-col width-30>
+            <img src="assets/imgs/charity.png" >
+            <h6>Thank you!</h6>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+      <h2 text-center>Your Receipt</h2>
+      <ion-list class="sr-info">
+        <ion-grid>
+          <ion-row>
+              <ion-col col-4 class="plan-left">
+                  <ion-label><b>Sr No:</b></ion-label>
+              </ion-col>
+              <ion-col col-8 class="plan-rightt">
+                  <ion-label>69815</ion-label>
+              </ion-col>
+              
+          </ion-row>
+          <ion-row>
+              <ion-col col-4 class="plan-left">
+                  <ion-label><b>Date:</b></ion-label>
+              </ion-col>
+              <ion-col col-8 class="plan-right">
+                  <ion-label>January-19</ion-label>
+              </ion-col>
+          </ion-row>
+        </ion-grid>
+        </ion-list>
+        <p class="para">You Paid Rs/-__________ (Rupees) ___________________ on account of sponsership of ______ child/children on:</p>
+
+        
+<!-- <ion-list> 
+  <ion-grid>
+    <ion-row>
+      <ion-col col-1 class="plan-left" style="border:2px solid #A6A6A6">
+        <div></div>
+      </ion-col>
+      <ion-col col-5 class="plain-left">
+        <ion-label>Monthly</ion-label>
+      </ion-col>
+      <ion-col col-1 class="plan-left" style="border:2px solid #A6A6A6">
+          <div></div>
+        </ion-col>
+        <ion-col col-5 class="plain-left">
+          <ion-label>Quarterly</ion-label>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-1 class="plan-left" style="border:2px solid #A6A6A6">
+          <div></div>
+        </ion-col>
+        <ion-col col-5 class="plain-left">
+          <ion-label>Six Months</ion-label>
+        </ion-col>
+        <ion-col col-1 class="plan-left" style="border:2px solid #A6A6A6">
+            <div></div>
+          </ion-col>
+          <ion-col col-5 class="plain-left">
+            <ion-label>Yearly</ion-label>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-list>  -->
+
+<ion-list class="pad-left-100">
+    <ion-item *ngFor="let entry of donationtype">
+      <ion-label>{{entry.val}}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+    </ion-item>
+</ion-list>
+
+
+
+  <!-- ion radio group -->
+  <!-- <ion-list radio-group [(ngModel)]="donation" class="pad-left-100">
+      <ion-item>
+        <ion-radio value="friends" checked></ion-radio>
+        <ion-label>One Month</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-radio value="family" disabled></ion-radio>
+        <ion-label>One Quarter</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-radio value="enemies" disabled></ion-radio>
+        <ion-label>One Year</ion-label>
+      </ion-item>
+    </ion-list>
+     -->
+<p class="para">basis from ___________ to ___________ </p>
+
+</ion-content>
+

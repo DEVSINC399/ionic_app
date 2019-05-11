@@ -1,0 +1,91 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="margin-top:15px;">
+
+  <!-- <ion-fab bottom right >
+    <button ion-fab (click)="gotoMainScreen()"><ion-icon name="home"></ion-icon></button>
+     <ion-fab-list side="top">
+      <button ion-fab>Facebook</button>
+      <button ion-fab>Twitter</button>
+      <button ion-fab>Youtube</button>
+    </ion-fab-list> 
+    </ion-fab>--> 
+    
+  <ion-row class="logo-row">
+      <ion-col></ion-col>
+      <ion-col width-65>
+        <img src="assets/imgs/ic_people.png">
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+
+    <h1 class="main-heading">Edit your Profile</h1>
+    <ion-list>
+      <ion-item>
+          <ion-label floating padding-left><ion-icon name="person" style="margin-right: 3px;"></ion-icon>User Name</ion-label>
+          <ion-input class="input-fields"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating padding-left><ion-icon name="person" style="margin-right: 3px;"></ion-icon>Donor Id</ion-label>
+        <ion-input class="input-fields"></ion-input>
+      </ion-item>
+     
+      <ion-item>
+        <ion-label floating padding-left><ion-icon name="pin" style="margin-right: 3px;"></ion-icon>Address</ion-label>
+       <ion-textarea class="input-fields"></ion-textarea>
+    </ion-item>
+
+      <!-- <ion-item>
+          <ion-label floating padding-left><ion-icon name="lock" style="margin-right: 3px;"></ion-icon>Password</ion-label>
+          <ion-input type="password" class="input-fields"></ion-input>
+      </ion-item> -->
+   
+
+      <ion-item>
+          <ion-label floating padding-left><ion-icon name="mail" style="margin-right: 3px;"></ion-icon>Email</ion-label>
+          <ion-input type="email" class="input-fields"></ion-input>
+     </ion-item>
+   
+
+      <ion-item>
+          <ion-label floating padding-left><ion-icon name="call" style="margin-right: 3px;"></ion-icon>Telephone Number</ion-label>
+          <ion-input type="text" class="input-fields"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating padding-left><ion-icon name="call" style="margin-right: 3px;"></ion-icon>Cell Number</ion-label>
+          <ion-input type="text" class="input-fields"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating padding-left><ion-icon name="lock" style="margin-right: 3px;"></ion-icon>New Password</ion-label>
+        <ion-input type="password" class="input-fields"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label floating padding-left><ion-icon name="lock" style="margin-right: 3px;"></ion-icon>Confirm Password</ion-label>
+        <ion-input type="password" class="input-fields"></ion-input>
+      </ion-item>
+
+      <p class="para">(*This field is Mandatory for Profile update)</p>
+      <ion-item class="current">
+        <ion-label floating padding-left><ion-icon name="lock" style="margin-right: 3px;"></ion-icon>Current Password *</ion-label>
+        <ion-input type="password" class="input-fields" style="margin-bottom: 20px;"></ion-input>
+      </ion-item>
+      
+  </ion-list>  
+  <button ion-button block secondary class="blue-button">Save</button>
+</ion-content>
+<ion-footer fixed>
+<img src="assets/imgs/app.png">
+</ion-footer>
+
