@@ -3,6 +3,9 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { PostProvider } from '../providers/postprovider/postprovider';
+import { HttpModule } from '@angular/http';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -20,7 +23,6 @@ import { PaymentreceiptPage } from '../pages/paymentreceipt/paymentreceipt';
 import { StudentresultsPage } from '../pages/studentresults/studentresults';
 import { ResultPage } from '../pages/result/result';
 import { AdmissionformPage } from '../pages/admissionform/admissionform';
-import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 @NgModule({
   declarations: [
@@ -43,8 +45,9 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
-    
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -69,7 +72,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthServiceProvider
+    PostProvider
   ]
 })
 export class AppModule {}

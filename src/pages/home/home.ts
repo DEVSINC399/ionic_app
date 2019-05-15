@@ -4,6 +4,7 @@ import { DwrPage } from '../dwr/dwr';
 import { SrPage } from '../sr/sr';
 import { DrPage } from '../dr/dr';
 import { LoginPage } from '../login/login';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-home',
@@ -11,9 +12,14 @@ import { LoginPage } from '../login/login';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  logged_in: boolean = false;
 
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
+    this.storage.get("session-storage").then(res => {
+      if(res){
+        this.logged_in = true;
+      }
+    });
   }
   getWasteRequest(){
     this.navCtrl.push(DwrPage);

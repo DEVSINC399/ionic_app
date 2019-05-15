@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, AlertController, Loading, ToastController } from 'ionic-angular';
 import { MainscreenPage } from '../mainscreen/mainscreen';
-import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { PostProvider } from '../../providers/postprovider/postprovider';
+import { Storage } from '@ionic/storage';
 
 
 @IonicPage()
@@ -11,55 +12,35 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 })
 export class LoginPage {
 
-  // loading: Loading;
-  // loginCredentials = {email: '', password: ''};
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, public auth:AuthServiceProvider, 
-    public alertCtrl: AlertController, public toastCtrl: ToastController) {
+  username: string = '';
+  password: string = '';
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, 
+    public alertCtrl: AlertController, public toastCtrl: ToastController, public postPvdr: PostProvider,
+    public storage: Storage) {
   }
 
-  // public login(){
-  //   this.showLoading()
-  //   this.auth.login(this.loginCredentials).subsribe(allowed =>{
-  //     if(allowed){
-  //       this.navCtrl.setRoot(MainscreenPage);
-  //     }else{
-  //       const toast = this.toastCtrl.create({
-  //         message: 'Fill the required fields first!',
-  //         duration: 3000
-  //       });
-  //       toast.present();
-  //     }
-  //   // },
-  //   //  error =>{
-  //   //    this.showError(error);
-  //    });
-  // }
-
-  // showError(text) {
-  //   this.loading.dismiss();
- 
-  //  let alert= this.alertCtrl.create({
-  //   title: 'Fail',
-  //   subTitle: text,
-  //   buttons:['OK']
-  //  });
-  //  alert.present(prompt);
-  // }
-
-  gotoMainScreen(){
-    this.navCtrl.setRoot(MainscreenPage);
-   
+  login(){
+    let body = {
+      username: this.username,
+      password: this.password,
+      mode: "login-request"
+    };
+    this.postPvdr.postData(body).subscribe(data => {
+      var msg = data.msg;
+      if(data.success){
+        this.storage.set("session-storage", data.data);
+        this.navCtrl.setRoot(MainscreenPage);
+        msg = "Logged in successfully.";
+      }
+      const toast = this.toastCtrl.create({
+        message: msg,
+        duration: 3000
+      });
+      toast.present();
+    }, error => {
+      console.log(error);
+    });
    }
-  // showLoading(){
-  //   this.loading = this.loadingCtrl.create({
-  //     content: "Please wait...",
-  //     dismissOnPageChange: true
-  //   });
-    // loader.present();
-    //  this.loading.present();
-  // }
-  // ionViewDidLoad() {
-  //   console.log('ionViewDidLoad LoginPage');
-  // }
 
 }
