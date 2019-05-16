@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ProfilePage } from '../pages/profile/profile';
+import { Storage } from '@ionic/storage';
 @Component({
   templateUrl: 'app.html'
 })
@@ -16,7 +17,7 @@ export class MyApp {
  pages: Array<{title: string, component: any, icon: string}>;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,   private menuCtrl: MenuController, 
-     public app: App, public alertCtrl: AlertController, public toastCtrl: ToastController) {
+     public app: App, public alertCtrl: AlertController, public toastCtrl: ToastController, public storage: Storage) {
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -43,6 +44,8 @@ export class MyApp {
         {
           text: 'Yes',
           handler: () => {
+            this.storage.set("session-storage", null);
+            this.menuCtrl.close();
             this.app.getRootNav().setRoot(HomePage);
             const toast = this.toastCtrl.create({
               message: 'Logout successfully!',
