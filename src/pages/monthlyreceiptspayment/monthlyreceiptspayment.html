@@ -13,12 +13,8 @@
       
     <ion-list>
     
-        <ion-item (click)="getPaymentReceipt()">
-          <ion-label>Payment May 2019</ion-label>
-        </ion-item>
-    
-        <ion-item>
-          <ion-label>Payment June 2019</ion-label>
+        <ion-item *ngFor="let receipt_month of receipt_months" (click)="getPaymentReceipt(receipt_month)">
+          <ion-label>Payment in {{ receipt_month }}</ion-label>
         </ion-item>
     
       </ion-list>

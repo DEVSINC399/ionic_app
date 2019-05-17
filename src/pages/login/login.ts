@@ -24,6 +24,7 @@ export class LoginPage implements OnInit {
   ngOnInit(){
     this.storage.get("session-storage").then(res => {
       if(res != null){
+        this.presentLoading();
         this.navCtrl.setRoot(MainscreenPage);
       }
     });

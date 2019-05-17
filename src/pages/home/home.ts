@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { DwrPage } from '../dwr/dwr';
 import { SrPage } from '../sr/sr';
 import { DrPage } from '../dr/dr';
@@ -33,4 +33,5 @@ export class HomePage {
   getLoginDetails(){
     this.navCtrl.push(LoginPage);
   }
+
 }
