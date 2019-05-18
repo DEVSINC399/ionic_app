@@ -21,6 +21,8 @@ export class ResultPage {
   student_id: string = '';
   year: string = '';
   results: any = [];
+  extras: any = [];
+  subject_results: any = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, private loadingCtrl: LoadingController, private toastCtrl: ToastController, private postPvdr: PostProvider) {
   }
@@ -45,7 +47,9 @@ export class ResultPage {
     this.postPvdr.postData(body).subscribe( (data) => {
       var msg = data.msg;
         if(data.success){
-          this.results = data.data;
+          this.results = data.data[0];
+          this.extras = data.extras;
+          this.subject_results = data.subject_results;
         }else{
           this.presentToast(msg);
         }
