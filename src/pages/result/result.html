@@ -1,9 +1,3 @@
-<!--
-  Generated template for the ResultPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
     <ion-title>Result</ion-title>
@@ -11,6 +5,92 @@
 </ion-header>
 
 <ion-content padding>
+  <h2 text-center>Annual Result Progress Report</h2>
 
+  <ion-row class="exam-type">
+    <ion-col>
+      <ion-item style="border-bottom:2px solid #2C80BB">
+        <ion-label>Exam Type:</ion-label>
+      <ion-label>Final</ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <div id="heading1">
+    <p>Student's Detail</p>
+  </div>
+  <ion-list class="student-info">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+            <ion-label><b>Name:</b></ion-label>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+            <ion-label>{{ results[0]['student_name'] }}</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+        <ion-row>
+          <ion-col col-3 class="plan-left">
+              <ion-label><b>Class:</b></ion-label>
+          </ion-col>
+          <ion-col col-2 class="plan-left">
+              <ion-label>3</ion-label>
+          </ion-col>
+          <ion-col col-4 class="plan-left">
+              <ion-label><b>Roll No:</b></ion-label>
+          </ion-col>
+          <ion-col col-3 class="plan-left">
+              <ion-label>23455</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+          <ion-row>
+            <ion-col col-5 class="plan-left">
+                <ion-label><b>Campus:</b></ion-label>
+            </ion-col>
+            <ion-col col-7 class="plan-left">
+                <ion-label>Qamar un Nisa</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+  </ion-list>
+
+  <div id="heading2">
+    <p>Academic Report</p>
+  </div>
+  <ion-list class="plan-list">
+    <ion-grid>
+      <ion-row>
+          <ion-col col-4 class="plan-left" style="border:2px solid #A6A6A6">
+            <div text-center><b>Subjects</b></div>
+        </ion-col>
+
+        <ion-col col-3 style="border:2px solid #A6A6A6">
+            <div text-center><b>Total Marks</b></div>
+          </ion-col>
+
+          <ion-col col-3  style="border:2px solid #A6A6A6">
+              <div text-center><b>Obtained Marks</b></div>
+            </ion-col>
+
+            <ion-col col-2  style="border:2px solid #A6A6A6">
+                <div text-center><b>%</b></div>
+              </ion-col> 
+      </ion-row>
+
+    </ion-grid>
+  </ion-list>
+  
+  <!-- <ion-footer padding> -->
+      <ion-row class="comment">
+          <ion-col>
+              <ion-label style="border-bottom:2px solid #2C80BB"><b>Teacher's comments:</b></ion-label>
+            <ion-label>Well done! Keep it Up! </ion-label>
+          </ion-col>
+        </ion-row>
+  <!-- </ion-footer> -->
   
 </ion-content>

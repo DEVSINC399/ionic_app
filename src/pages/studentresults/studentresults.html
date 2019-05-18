@@ -8,18 +8,9 @@
 <ion-content padding>
   <ion-list>
     
-    <ion-item (click)="getResult()">
-      <ion-label>Student 1</ion-label>
+    <ion-item *ngFor="let student of students" (click)="getResult(student['id'])">
+      <ion-label>{{ student['name'] }}</ion-label>
     </ion-item>
-
-    <ion-item>
-      <ion-label>Student 2</ion-label>
-    </ion-item>
-
-    
-    <ion-item>
-      <ion-label>Student 3</ion-label>
-    </ion-item> 
 
   </ion-list>
 </ion-content>
