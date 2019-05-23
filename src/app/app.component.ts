@@ -16,6 +16,8 @@ export class MyApp {
 
  pages: Array<{title: string, component: any, icon: string}>;
 
+ username: string = '';
+
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,   private menuCtrl: MenuController, 
      public app: App, public alertCtrl: AlertController, public toastCtrl: ToastController, public storage: Storage) {
 
@@ -23,6 +25,9 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
+      this.storage.get("session-storage").then( (res) => {
+        this.username = res.fullname;
+      });
       // splashScreen.show();
       splashScreen.hide();
     });
