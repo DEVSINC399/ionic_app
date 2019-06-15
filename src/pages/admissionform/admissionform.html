@@ -17,222 +17,209 @@
 </div>
 <div [ngSwitch]="information">
 
-    <ion-list *ngSwitchCase="'student'" class="info">
-
+    <ion-list *ngSwitchCase="'student'" class="plan-list">
         <ion-grid>
-            <ion-row>
-                <ion-col col-3 class="plan-left">
-                    <ion-label class="label_text">Name:</ion-label>
-                </ion-col>
-                <ion-col col-9 class="plan-left">
-                    <ion-label>Muhammad Ahmad</ion-label>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col col-3 class="plan-left">
-                    <ion-label class="label_text">D.O.B:</ion-label>
-                </ion-col>
-                <ion-col col-9 class="plan-left">
-                    <ion-label>Feb-9-2011</ion-label>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col col-5 class="plan-left">
-                    <ion-label class="label_text">Admission date:</ion-label>
-                </ion-col>
-                <ion-col col-7 class="plan-left">
-                    <ion-label>Feb-19-2019</ion-label>
-                </ion-col>
-              </ion-row>
-            <ion-row>
-              <ion-col col-3 class="plan-left">
-                  <ion-label class="label_text">Age:</ion-label>
-              </ion-col>
-              <ion-col col-3 class="plan-left">
-                  <ion-label>11 yr</ion-label>
-              </ion-col>
-             <ion-col col-3 class="plan-left">
-                    <ion-label class="label_text">Class:</ion-label>
-              </ion-col>
-             <ion-col col-3 class="plan-left">
-                 <ion-label>Eight</ion-label>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-             <ion-col col-4 class="plan-left">
-                    <ion-label class="label_text">Roll No:</ion-label>
-              </ion-col>
-             <ion-col col-8 class="plan-left">
-                 <ion-label>1345-2</ion-label>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col col-4 class="plan-left">
-                     <ion-label class="label_text">Gender:</ion-label>
-               </ion-col>
-              <ion-col col-8 class="plan-left">
-                  <ion-label>Female</ion-label>
-               </ion-col>
-             </ion-row>
-            <ion-row>
-              <ion-col col-4 class="plan-left">
-                  <ion-label class="label_text">Campus:</ion-label>
-              </ion-col>
-              <ion-col col-8 class="plan-left">
-                  <ion-label>Qamar-un-Nisa</ion-label>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-    </ion-list>
-
-    <ion-list *ngSwitchCase="'father'" class="info">
-        <ion-grid>
-            <ion-row>
-                <ion-col col-3 class="plan-left">
-                    <ion-label class="label_text">Name:</ion-label>
-                </ion-col>
-                <ion-col col-9 class="plan-left">
-                    <ion-label>Malik Hussain Muhammad</ion-label>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col col-3 class="plan-left">
-                    <ion-label class="label_text">D.O.B:</ion-label>
-                </ion-col>
-                <ion-col col-9 class="plan-left">
-                    <ion-label>Feb-18-1987</ion-label>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col col-3 class="plan-left">
-                    <ion-label class="label_text">Age:</ion-label>
-                </ion-col>
-                <ion-col col-9 class="plan-left">
-                    <ion-label> years</ion-label>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col col-6 class="plan-left">
-                    <ion-label class="label_text">Qualification:</ion-label>
-                </ion-col>
-                <ion-col col-6 class="plan-left">
-                    <ion-label>Illiterate</ion-label>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col col-6 class="plan-left">
-                    <ion-label class="label_text">Professional Skills:</ion-label>
-                </ion-col>
-                <ion-col col-6 class="plan-left">
-                    <ion-label>Unskilled</ion-label>
-                </ion-col>
-              </ion-row>
+          <ion-row style="margin-top: 10px;">
+            <ion-col col-4 class="plan-left">
+              <div style="font-weight: bold;">Name:</div>
+            </ion-col>
+            <ion-col col-8 class="plan-left">
+                <div>{{ student_detail[0].name }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4 class="plan-left">
+              <div style="font-weight: bold;">D.O.B:</div>
+            </ion-col>
+            <ion-col col-8 class="plan-left">
+                <div>{{ student_detail[0].date_of_birth }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4 class="plan-left">
+              <div style="font-weight: bold;">Admission Date:</div>
+            </ion-col>
+            <ion-col col-8 class="plan-left">
+                <div>{{ student_detail[0].admission_date }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4 class="plan-left">
+              <div style="font-weight: bold;">Age:</div>
+            </ion-col>
+            <ion-col col-8 class="plan-left">
+                <div>11 yrs</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4 class="plan-left">
+              <div style="font-weight: bold;">Class:</div>
+            </ion-col>
+            <ion-col col-8 class="plan-left">
+                <div>Eight</div>
+            </ion-col>
+          </ion-row>  
+          <ion-row>
+            <ion-col col-4 class="plan-left">
+              <div style="font-weight: bold;">Roll No:</div>
+            </ion-col>
+            <ion-col col-8 class="plan-left">
+                <div>{{ student_detail[0].roll_no }}</div>
+            </ion-col>
+          </ion-row> 
+          <ion-row>
+            <ion-col col-4 class="plan-left">
+              <div style="font-weight: bold;">Gender:</div>
+            </ion-col>
+            <ion-col col-8 class="plan-left">
+                <div>Female</div>
+            </ion-col>
+          </ion-row>   
+          <ion-row>
+            <ion-col col-4 class="plan-left">
+              <div style="font-weight: bold;">Campus:</div>
+            </ion-col>
+            <ion-col col-8 class="plan-left">
+                <div>Qamar-un-Nisa</div>
+            </ion-col>
+          </ion-row>    
         </ion-grid>
-    </ion-list>
+      </ion-list>
 
-    <ion-list *ngSwitchCase="'mother'" class="info">
+      <ion-list *ngSwitchCase="'father'" class="plan-list">
         <ion-grid>
-            <ion-row>
-                <ion-col col-3 class="plan-left">
-                    <ion-label class="label_text">Name:</ion-label>
-                </ion-col>
-                <ion-col col-9 class="plan-left">
-                    <ion-label>Afia Bibi</ion-label>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col col-3 class="plan-left">
-                    <ion-label class="label_text">D.O.B:</ion-label>
-                </ion-col>
-                <ion-col col-9 class="plan-left">
-                    <ion-label>Feb-11-1989</ion-label>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col col-3 class="plan-left">
-                    <ion-label class="label_text">Age:</ion-label>
-                </ion-col>
-                <ion-col col-9 class="plan-left">
-                    <ion-label>31 years</ion-label>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col col-6 class="plan-left">
-                    <ion-label class="label_text">Qualification:</ion-label>
-                </ion-col>
-                <ion-col col-6 class="plan-left">
-                    <ion-label>Illiterate</ion-label>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col col-6 class="plan-left">
-                    <ion-label class="label_text">Professional Skills:</ion-label>
-                </ion-col>
-                <ion-col col-6 class="plan-left">
-                    <ion-label>Unskilled</ion-label>
-                </ion-col>
-              </ion-row>
+          <ion-row style="margin-top: 10px;">
+            <ion-col col-4 class="plan-left">
+              <div style="font-weight: bold;">Name:</div>
+            </ion-col>
+            <ion-col col-8 class="plan-left">
+                <div>{{ student_detail[0].name }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4 class="plan-left">
+              <div style="font-weight: bold;">D.O.B:</div>
+            </ion-col>
+            <ion-col col-8 class="plan-left">
+                <div>{{ student_detail[0].date_of_birth }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4 class="plan-left">
+              <div style="font-weight: bold;">Age:</div>
+            </ion-col>
+            <ion-col col-8 class="plan-left">
+                <div>33 yrs</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4 class="plan-left">
+              <div style="font-weight: bold;">Qalification:</div>
+            </ion-col>
+            <ion-col col-8 class="plan-left">
+                <div>Illiterate</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4 class="plan-left">
+              <div style="font-weight: bold;">Professional Skills:</div>
+            </ion-col>
+            <ion-col col-8 class="plan-left">
+                <div>Unskilled</div>
+            </ion-col>
+          </ion-row>   
         </ion-grid>
-    </ion-list>
+      </ion-list>
     
-    <ion-list *ngSwitchCase="'general'" class="info">
+      <ion-list *ngSwitchCase="'mother'" class="plan-list">
         <ion-grid>
-            <ion-row>
-              <ion-col col-5 class="plan-left">
-                  <ion-label class="label_text">Religion:</ion-label>
-              </ion-col>
-              <ion-col col-7 class="plan-left">
-                  <ion-label>Islam</ion-label>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col col-8 class="plan-left">
-                  <ion-label class="label_text">Number of Siblings:</ion-label>
-              </ion-col>
-              <ion-col col-4 class="plan-left">
-                  <ion-label>4</ion-label>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col col-4 class="plan-left">
-                  <ion-label class="label_text">Male:</ion-label>
-              </ion-col>
-              <ion-col col-2 class="plan-left">
-                  <ion-label>2</ion-label>
-              </ion-col>
-              <ion-col col-4 class="plan-left">
-                <ion-label class="label_text">Female:</ion-label>
+          <ion-row style="margin-top: 10px;">
+            <ion-col col-4 class="plan-left">
+              <div style="font-weight: bold;">Name:</div>
             </ion-col>
-            <ion-col col-2 class="plan-left">
-                <ion-label>2</ion-label>
+            <ion-col col-8 class="plan-left">
+                <div>{{ student_detail[0].mother_name }}</div>
             </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col col-5 class="plan-left">
-                    <ion-label class="label_text">Guardian's Occupation:</ion-label>
-                </ion-col>
-                <ion-col col-7 class="plan-left">
-                    <ion-label class="label_text">Others</ion-label>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col col-5 class="plan-left">
-                    <ion-label class="label_text">Residential Status:</ion-label>
-                </ion-col>
-                <ion-col col-7 class="plan-left">
-                    <ion-label>Rented</ion-label>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col col-5 class="plan-left">
-                    <ion-label class="label_text">Financial Status:</ion-label>
-                </ion-col>
-                <ion-col col-7 class="plan-left">
-                    <ion-label>Less Than Rs. 20000</ion-label>
-                </ion-col>
-              </ion-row>
-          </ion-grid>
-    </ion-list>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4 class="plan-left">
+              <div style="font-weight: bold;">D.O.B:</div>
+            </ion-col>
+            <ion-col col-8 class="plan-left">
+                <div>{{ student_detail[0].mother_date_of_birth }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4 class="plan-left">
+              <div style="font-weight: bold;">Age:</div>
+            </ion-col>
+            <ion-col col-8 class="plan-left">
+                <div>33 yrs</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4 class="plan-left">
+              <div style="font-weight: bold;">Qalification:</div>
+            </ion-col>
+            <ion-col col-8 class="plan-left">
+                <div>Illiterate</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4 class="plan-left">
+              <div style="font-weight: bold;">Professional Skills:</div>
+            </ion-col>
+            <ion-col col-8 class="plan-left">
+                <div>Unskilled</div>
+            </ion-col>
+          </ion-row>   
+        </ion-grid>
+      </ion-list>
+
+      <ion-list *ngSwitchCase="'general'" class="plan-list">
+        <ion-grid>
+          <ion-row style="margin-top: 10px;">
+            <ion-col col-7 class="plan-left">
+              <div style="font-weight: bold;">Religion:</div>
+            </ion-col>
+            <ion-col col-5 class="plan-left">
+                <div>Islam</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-7 class="plan-left">
+              <div style="font-weight: bold;">No. of Siblings:</div>
+            </ion-col>
+            <ion-col col-5 class="plan-left">
+                <div>4</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-7 class="plan-left">
+              <div style="font-weight: bold;">Guardian's Occuptaion:</div>
+            </ion-col>
+            <ion-col col-5 class="plan-left">
+                <div>Others</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-7 class="plan-left">
+              <div style="font-weight: bold;">Residential Status:</div>
+            </ion-col>
+            <ion-col col-5 class="plan-left">
+                <div>Rented</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-7 class="plan-left">
+              <div style="font-weight: bold;">Financial Status:</div>
+            </ion-col>
+            <ion-col col-5 class="plan-left">
+                <div>Less Than<br>Rs. 20000</div>
+            </ion-col>
+          </ion-row>   
+        </ion-grid>
+      </ion-list>
 </div>
 
 
