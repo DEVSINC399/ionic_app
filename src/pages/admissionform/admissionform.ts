@@ -13,6 +13,7 @@ export class AdmissionformPage {
 
   student_name: string = '';
   student_detail = [];
+  extras = [];
   //default selected segment--> information: string = "student";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, private postPvdr: PostProvider, public toastCtrl: ToastController) {
@@ -33,6 +34,8 @@ export class AdmissionformPage {
       var msg = data.msg;
         if(data.success){
           this.student_detail = data.data;
+          this.extras = data.extras;
+          console.log(data);
         }else{
           this.presentToast(msg);
         }
