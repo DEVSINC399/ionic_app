@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import {  Platform, NavController, MenuController, AlertController, ToastController, NavParams, App } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -9,7 +9,7 @@ import { Storage } from '@ionic/storage';
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class MyApp implements OnInit {
   homePage = HomePage;
   profilePage = ProfilePage;
   @ViewChild('nav') nav: NavController;
@@ -25,11 +25,16 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
-      this.storage.get("session-storage").then( (res) => {
-        this.username = res.fullname;
-      });
       // splashScreen.show();
       splashScreen.hide();
+    });
+  }
+
+  ngOnInit(){
+    this.storage.get("session-storage").then( (res) => {
+      if(res){
+        this.username = res.fullname;
+      }
     });
   }
 

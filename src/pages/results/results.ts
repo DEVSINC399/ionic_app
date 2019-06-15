@@ -5,12 +5,7 @@ import { StudentresultsPage } from '../studentresults/studentresults';
 import { Storage } from '@ionic/storage';
 import { PostProvider } from '../../providers/postprovider/postprovider';
 
-/**
- * Generated class for the ResultsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({

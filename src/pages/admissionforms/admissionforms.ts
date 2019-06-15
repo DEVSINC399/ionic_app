@@ -24,8 +24,8 @@ export class AdmissionformsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, private loadingCtrl: LoadingController, private toastCtrl: ToastController, private postPvdr: PostProvider) {
   }
 
-  getAdmissionform(){
-    this.navCtrl.push(AdmissionformPage);
+  getAdmissionform(name){
+    this.navCtrl.push(AdmissionformPage, {"student_name": name});
   }
 
   ionViewWillEnter(){
