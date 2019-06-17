@@ -117,7 +117,7 @@
               <div style="font-weight: bold;">Qalification:</div>
             </ion-col>
             <ion-col col-6 class="plan-left">
-                <div>Illiterate</div>
+                <div>{{ extras['father_qualification'] }}</div>
             </ion-col>
           </ion-row>
           <ion-row>
@@ -125,7 +125,7 @@
               <div style="font-weight: bold;">Professional Skills:</div>
             </ion-col>
             <ion-col col-6 class="plan-left">
-                <div>Unskilled</div>
+                <div>{{ extras['father_professional'] }}</div>
             </ion-col>
           </ion-row>   
         </ion-grid>
@@ -162,7 +162,7 @@
               <div style="font-weight: bold;">Qalification:</div>
             </ion-col>
             <ion-col col-6 class="plan-left">
-                <div>Illiterate</div>
+                <div>{{ extras['mother_qualification'] }}</div>
             </ion-col>
           </ion-row>
           <ion-row>
@@ -170,7 +170,7 @@
               <div style="font-weight: bold;">Professional Skills:</div>
             </ion-col>
             <ion-col col-6 class="plan-left">
-                <div>Unskilled</div>
+                <div>{{ extras['mother_professional'] }}</div>
             </ion-col>
           </ion-row>   
         </ion-grid>
@@ -183,7 +183,7 @@
               <div style="font-weight: bold;">Religion:</div>
             </ion-col>
             <ion-col col-5 class="plan-left">
-                <div>Islam</div>
+                <div>{{ extras['religion'] }}</div>
             </ion-col>
           </ion-row>
           <ion-row>
@@ -213,7 +213,7 @@
               <div style="font-weight: bold;">Guardian's Occuptaion:</div>
             </ion-col>
             <ion-col col-5 class="plan-left">
-                <div>Others</div>
+                <div>{{ extras['guardian_occupation'] }}</div>
             </ion-col>
           </ion-row>
           <ion-row>
@@ -221,7 +221,7 @@
               <div style="font-weight: bold;">Residential Status:</div>
             </ion-col>
             <ion-col col-5 class="plan-left">
-                <div>Rented</div>
+                <div>{{ extras['residential'] }}</div>
             </ion-col>
           </ion-row>
           <ion-row>
@@ -229,279 +229,11 @@
               <div style="font-weight: bold;">Financial Status:</div>
             </ion-col>
             <ion-col col-5 class="plan-left">
-                <div>Less Than<br>Rs. 20000</div>
+                <div>{{ extras['income'] }}</div>
             </ion-col>
           </ion-row>   
         </ion-grid>
       </ion-list>
 </div>
-
-
-
-
-
-
-
-
-
-
-       
-        <!-- <ion-list class="info">
-          <ion-grid>
-              <ion-row>
-                  <ion-col col-3 class="plan-left">
-                      <ion-label>Name:</ion-label>
-                  </ion-col>
-                  <ion-col col-9 class="plan-left">
-                      <ion-label class="label_">jsdjhu</ion-label>
-                  </ion-col>
-                </ion-row>
-                <ion-row>
-                  <ion-col col-3 class="plan-left">
-                      <ion-label>D.O.B:</ion-label>
-                  </ion-col>
-                  <ion-col col-9 class="plan-left">
-                      <ion-label class="label_">9-Feb-2019</ion-label>
-                  </ion-col>
-                </ion-row>
-                <ion-row>
-                  <ion-col col-7 class="plan-left">
-                      <ion-label>Admission date:</ion-label>
-                  </ion-col>
-                  <ion-col col-5 class="plan-left">
-                      <ion-label class="label_">9-Feb-2019</ion-label>
-                  </ion-col>
-                </ion-row>
-              <ion-row>
-                <ion-col col-3 class="plan-left">
-                    <ion-label>Age:</ion-label>
-                </ion-col>
-                <ion-col col-3 class="plan-left">
-                    <ion-label class="label_">11 yr</ion-label>
-                </ion-col>
-               <ion-col col-3 class="plan-left">
-                      <ion-label>Class:</ion-label>
-                </ion-col>
-               <ion-col col-3 class="plan-left">
-                   <ion-label class="label_">Eight</ion-label>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-               <ion-col col-4 class="plan-left">
-                      <ion-label>Roll No:</ion-label>
-                </ion-col>
-               <ion-col col-8 class="plan-left">
-                   <ion-label class="label_">1345-2</ion-label>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col col-4 class="plan-left">
-                       <ion-label>Gender:</ion-label>
-                 </ion-col>
-                <ion-col col-8 class="plan-left">
-                    <ion-label class="label_">Female</ion-label>
-                 </ion-col>
-               </ion-row>
-              <ion-row>
-                <ion-col col-4 class="plan-left">
-                    <ion-label>Campus:</ion-label>
-                </ion-col>
-                <ion-col col-8 class="plan-left">
-                    <ion-label class="label_">Qamar-un-Nisa</ion-label>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-        </ion-list>
-      
-        <div id="heading1">
-          <p>Father's Information</p>
-        </div>
-        <ion-list class="info">
-          <ion-grid>
-              <ion-row>
-                  <ion-col col-3 class="plan-left">
-                      <ion-label>Name:</ion-label>
-                  </ion-col>
-                  <ion-col col-9 class="plan-left">
-                      <ion-label class="label_">jsdjhhuwehhgsydyuweyiadhfhdsgcju</ion-label>
-                  </ion-col>
-                </ion-row>
-                <ion-row>
-                  <ion-col col-3 class="plan-left">
-                      <ion-label>D.O.B:</ion-label>
-                  </ion-col>
-                  <ion-col col-9 class="plan-left">
-                      <ion-label class="label_">Feburary,8,2019</ion-label>
-                  </ion-col>
-                </ion-row>
-                <ion-row>
-                  <ion-col col-3 class="plan-left">
-                      <ion-label>Age:</ion-label>
-                  </ion-col>
-                  <ion-col col-9 class="plan-left">
-                      <ion-label class="label_">11 years</ion-label>
-                  </ion-col>
-                </ion-row>
-                <ion-row>
-                  <ion-col col-3 class="plan-left">
-                      <ion-label>CNIC:</ion-label>
-                  </ion-col>
-                  <ion-col col-9 class="plan-left">
-                      <ion-label class="label_">35201-2345678-9</ion-label>
-                  </ion-col>
-                </ion-row>
-                <ion-row>
-                  <ion-col col-7 class="plan-left">
-                      <ion-label>Qualification:</ion-label>
-                  </ion-col>
-                  <ion-col col-5 class="plan-left">
-                      <ion-label class="label_">Illiterate</ion-label>
-                  </ion-col>
-                </ion-row>
-                <ion-row>
-                  <ion-col col-7 class="plan-left">
-                      <ion-label>Professional Skills:</ion-label>
-                  </ion-col>
-                  <ion-col col-5 class="plan-left">
-                      <ion-label class="label_">Unskilled</ion-label>
-                  </ion-col>
-                </ion-row>
-          </ion-grid>
-        </ion-list>
-      
-        <div id="heading1">
-          <p>Mother's Information</p>
-        </div>
-        <ion-list class="info">
-          <ion-grid>
-              <ion-row>
-                  <ion-col col-3 class="plan-left">
-                      <ion-label>Name:</ion-label>
-                  </ion-col>
-                  <ion-col col-9 class="plan-left">
-                      <ion-label class="label_">jjjsgcju</ion-label>
-                  </ion-col>
-                </ion-row>
-                <ion-row>
-                  <ion-col col-3 class="plan-left">
-                      <ion-label>D.O.B:</ion-label>
-                  </ion-col>
-                  <ion-col col-9 class="plan-left">
-                      <ion-label class="label_">Feburary,8,2019</ion-label>
-                  </ion-col>
-                </ion-row>
-                <ion-row>
-                  <ion-col col-3 class="plan-left">
-                      <ion-label>Age:</ion-label>
-                  </ion-col>
-                  <ion-col col-9 class="plan-left">
-                      <ion-label class="label_">31 years</ion-label>
-                  </ion-col>
-                </ion-row>
-                <ion-row>
-                  <ion-col col-3 class="plan-left">
-                      <ion-label>CNIC:</ion-label>
-                  </ion-col>
-                  <ion-col col-9 class="plan-left">
-                      <ion-label class="label_">35201-2345678-9</ion-label>
-                  </ion-col>
-                </ion-row>
-                <ion-row>
-                  <ion-col col-7 class="plan-left">
-                      <ion-label>Qualification:</ion-label>
-                  </ion-col>
-                  <ion-col col-5 class="plan-left">
-                      <ion-label class="label_">Illiterate</ion-label>
-                  </ion-col>
-                </ion-row>
-                <ion-row>
-                  <ion-col col-7 class="plan-left">
-                      <ion-label>Professional Skills:</ion-label>
-                  </ion-col>
-                  <ion-col col-5 class="plan-left">
-                      <ion-label class="label_">Unskilled</ion-label>
-                  </ion-col>
-                </ion-row>
-          </ion-grid>
-        </ion-list>
-      
-       <div id="heading1">
-          <p>General Information</p>
-        </div>
-        <ion-list class="info">
-          <ion-grid>
-            <ion-row>
-              <ion-col>
-                <label>Permanent Address:</label>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>
-                <ion-label class="label_">45-B Model Town Lahore</ion-label>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col col-5 class="plan-left">
-                  <ion-label>Phone No:</ion-label>
-              </ion-col>
-              <ion-col col-7 class="plan-left">
-                  <ion-label class="label_">042-02345678</ion-label>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col col-5 class="plan-left">
-                  <ion-label>Cell No:</ion-label>
-              </ion-col>
-              <ion-col col-7 class="plan-left">
-                  <ion-label class="label_">0300-2345678</ion-label>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col col-5 class="plan-left">
-                  <ion-label>Religion:</ion-label>
-              </ion-col>
-              <ion-col col-7 class="plan-left">
-                  <ion-label class="label_">Islam</ion-label>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col col-8 class="plan-left">
-                  <ion-label>Number of Siblings:</ion-label>
-              </ion-col>
-              <ion-col col-4 class="plan-left">
-                  <ion-label class="label_">4</ion-label>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col col-4 class="plan-left">
-                  <ion-label>Male:</ion-label>
-              </ion-col>
-              <ion-col col-2 class="plan-left">
-                  <ion-label class="label_">2</ion-label>
-              </ion-col>
-              <ion-col col-4 class="plan-left">
-                <ion-label>Female:</ion-label>
-            </ion-col>
-            <ion-col col-2 class="plan-left">
-                <ion-label class="label_">2</ion-label>
-            </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-list>
-       <hr>
-         
-          <p class="ginfo">Guardian's Occupation:</p>
-       
-            <ion-list>
-              <ion-item *ngFor="let entry of occupation">
-                <ion-label>{{entry.val}}</ion-label>
-                <ion-checkbox  [(ngModel)]="entry.isChecked"></ion-checkbox>
-              </ion-item>
-            </ion-list>
-       
-      
-          <p class="ginfo">Residential Status:</p>
-         
-          <p class="ginfo">Financial Status:</p> -->
-      </ion-content>
+</ion-content>
   
