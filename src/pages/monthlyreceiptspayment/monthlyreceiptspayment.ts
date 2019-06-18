@@ -55,9 +55,10 @@ export class MonthlyreceiptspaymentPage {
   getPaymentReceipt(month: string){
     this.navCtrl.push(PaymentreceiptPage, { "month": month });
   }
-  // gotoMainScreen(){
-  //   this.navCtrl.setRoot(MainscreenPage);
-  // }
+
+  gotoMainScreen(){
+    // this.navCtrl.setRoot(MainscreenPage);
+  }
 
   
   

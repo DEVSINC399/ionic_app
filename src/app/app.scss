@@ -27,6 +27,11 @@ ion-list > button{
     color : white !important;
 }
 
+ion-select.input-fields.select.select-md {
+    max-width: 100% !important;
+    width: 100%;
+}
+
 // .toolbar-background{
 //     background: #07548A;
 // }
