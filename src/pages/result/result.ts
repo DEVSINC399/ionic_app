@@ -76,4 +76,7 @@ export class ResultPage {
     console.log('ionViewDidLoad ResultPage');
   }
 
+  gotoMainScreen(){
+    this.navCtrl.popToRoot();
+  }
 }

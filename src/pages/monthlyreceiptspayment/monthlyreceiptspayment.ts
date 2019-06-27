@@ -57,7 +57,7 @@ export class MonthlyreceiptspaymentPage {
   }
 
   gotoMainScreen(){
-    // this.navCtrl.setRoot(MainscreenPage);
+    this.navCtrl.popToRoot();
   }
 
   

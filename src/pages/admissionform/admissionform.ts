@@ -66,4 +66,7 @@ export class AdmissionformPage {
     toast.present();
   }
 
+  gotoMainScreen(){
+    this.navCtrl.popToRoot();
+  }
 }

@@ -65,4 +65,10 @@ export class PaymentreceiptPage {
     });
     toast.present();
  }
+
+
+ gotoMainScreen(){
+  this.navCtrl.popToRoot();
+ }
+
 }

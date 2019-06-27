@@ -9,15 +9,6 @@
 </ion-header>
 
 <ion-content padding style="margin-top:15px;">
-
-  <!-- <ion-fab bottom right >
-    <button ion-fab (click)="gotoMainScreen()"><ion-icon name="home"></ion-icon></button>
-     <ion-fab-list side="top">
-      <button ion-fab>Facebook</button>
-      <button ion-fab>Twitter</button>
-      <button ion-fab>Youtube</button>
-    </ion-fab-list> 
-    </ion-fab>--> 
     
   <ion-row class="logo-row">
       <ion-col></ion-col>
@@ -31,39 +22,33 @@
     <ion-list>
       <ion-item>
           <ion-label floating padding-left><ion-icon name="person" style="margin-right: 3px;"></ion-icon>User Name</ion-label>
-          <ion-input class="input-fields"></ion-input>
+          <ion-input class="input-fields" [(ngModel)]="user_data['donar_name']" [readonly]="true"></ion-input>
       </ion-item>
     
       <ion-item>
         <ion-label floating padding-left><ion-icon name="person" style="margin-right: 3px;"></ion-icon>Donor Id</ion-label>
-        <ion-input class="input-fields"></ion-input>
+        <ion-input class="input-fields" [(ngModel)]="user_data['donar_id']" [readonly]="true"></ion-input>
       </ion-item>
      
       <ion-item>
         <ion-label floating padding-left><ion-icon name="pin" style="margin-right: 3px;"></ion-icon>Address</ion-label>
-       <ion-textarea class="input-fields"></ion-textarea>
+       <ion-textarea class="input-fields" [(ngModel)]="user_data['address']"></ion-textarea>
     </ion-item>
-
-      <!-- <ion-item>
-          <ion-label floating padding-left><ion-icon name="lock" style="margin-right: 3px;"></ion-icon>Password</ion-label>
-          <ion-input type="password" class="input-fields"></ion-input>
-      </ion-item> -->
    
-
       <ion-item>
           <ion-label floating padding-left><ion-icon name="mail" style="margin-right: 3px;"></ion-icon>Email</ion-label>
-          <ion-input type="email" class="input-fields"></ion-input>
+          <ion-input type="email" class="input-fields" [(ngModel)]="user_data['email']"></ion-input>
      </ion-item>
    
 
       <ion-item>
           <ion-label floating padding-left><ion-icon name="call" style="margin-right: 3px;"></ion-icon>Telephone Number</ion-label>
-          <ion-input type="text" class="input-fields"></ion-input>
+          <ion-input type="text" class="input-fields" [(ngModel)]="user_data['phone_no']"></ion-input>
       </ion-item>
 
       <ion-item>
           <ion-label floating padding-left><ion-icon name="call" style="margin-right: 3px;"></ion-icon>Cell Number</ion-label>
-          <ion-input type="text" class="input-fields"></ion-input>
+          <ion-input type="text" class="input-fields" [(ngModel)]="user_data['cell_no']"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -76,11 +61,11 @@
         <ion-input type="password" class="input-fields"></ion-input>
       </ion-item>
 
-      <p class="para">(*This field is Mandatory for Profile update)</p>
       <ion-item class="current">
         <ion-label floating padding-left><ion-icon name="lock" style="margin-right: 3px;"></ion-icon>Current Password *</ion-label>
         <ion-input type="password" class="input-fields" style="margin-bottom: 20px;"></ion-input>
       </ion-item>
+      <p class="para">* Authenticate to make changes</p>
       
   </ion-list>  
   <button ion-button block secondary class="blue-button">Save</button>
