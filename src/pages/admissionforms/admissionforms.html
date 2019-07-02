@@ -10,9 +10,10 @@
   <ion-content>
       <ion-list>
     
-          <ion-item *ngFor="let student of students" (click)="getAdmissionform(student.name)">
-            <ion-label>{{ student.name }}</ion-label>
-          </ion-item>
+          <button ion-item *ngFor="let student of students" (click)="getAdmissionform(student.name)">
+            <ion-icon [name]="person" ion-left></ion-icon>
+            <p>{{ student.name }}</p>
+          </button>
       
         </ion-list>
   </ion-content>
