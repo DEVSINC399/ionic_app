@@ -6,6 +6,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ProfilePage } from '../pages/profile/profile';
 import { Storage } from '@ionic/storage';
+import { Network } from '@ionic-native/network';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -19,9 +21,13 @@ export class MyApp implements OnInit {
  username: string = '';
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,   private menuCtrl: MenuController, 
-     public app: App, public alertCtrl: AlertController, public toastCtrl: ToastController, public storage: Storage) {
+     public app: App, public alertCtrl: AlertController, public toastCtrl: ToastController, public storage: Storage, public network: Network) {
 
     platform.ready().then(() => {
+      this.network.onDisconnect().subscribe(() => {
+      console.log('No Internet Connection');
+      });
+      
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();

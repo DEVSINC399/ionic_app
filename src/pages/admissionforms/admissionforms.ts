@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController } from 'ionic-angular';
 import { AdmissionformPage } from '../admissionform/admissionform';
 import { Storage } from '@ionic/storage';
 import { PostProvider } from '../../providers/postprovider/postprovider';
+import { Network } from '@ionic-native/network';
 
 /**
  * Generated class for the AdmissionformsPage page.
@@ -19,20 +20,25 @@ import { PostProvider } from '../../providers/postprovider/postprovider';
 export class AdmissionformsPage {
 
   id: string = '';
-  students: any = [];
+  students: any = [] = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, private loadingCtrl: LoadingController, private toastCtrl: ToastController, private postPvdr: PostProvider) {
-  }
-
-  getAdmissionform(name){
-    this.navCtrl.push(AdmissionformPage, {"student_name": name});
-  }
-
-  ionViewWillEnter(){
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, private loadingCtrl: LoadingController, private toastCtrl: ToastController, 
+    private postPvdr: PostProvider, private network: Network, private alertCtrl: AlertController) {
     this.storage.get("session-storage").then( (res) => {
       this.id = res.id;
       this.load();
     });
+  }
+
+  getAdmissionform(id){
+    this.navCtrl.push(AdmissionformPage, {"student_id": id});
+  }
+
+  ionViewWillEnter(){
+    // this.storage.get("session-storage").then( (res) => {
+    //   this.id = res.id;
+    //   this.load();
+    // });
   }
 
   load(){
@@ -48,6 +54,9 @@ export class AdmissionformsPage {
         }else{
           this.presentToast(msg);
         }
+    },error => {
+      if(error.status == 0)
+        this.presentAlert('Unable to connect with server. Check your internet connection and try again!');
     });
   }
 
@@ -67,5 +76,21 @@ export class AdmissionformsPage {
     });
     toast.present();
  }
-
+ presentAlert(msg) {
+  let alert = this.alertCtrl.create({
+    title: 'WHOOPS!',
+    message: msg,
+    buttons: [
+      {
+        text: 'OK',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }
+    
+    ]
+  });
+  alert.present();
+}
 }

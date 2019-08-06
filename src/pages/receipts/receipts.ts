@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController } from 'ionic-angular';
 import { MonthlyreceiptspaymentPage } from '../monthlyreceiptspayment/monthlyreceiptspayment';
 import { PostProvider } from '../../providers/postprovider/postprovider';
 import { Storage } from '@ionic/storage';
@@ -15,7 +15,8 @@ export class ReceiptsPage {
   receipt_years: any[] = [];
   id: string = '';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private postPvdr: PostProvider, private storage: Storage, private loadingCtrl: LoadingController, private toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private postPvdr: PostProvider, private alertCtrl: AlertController,
+    private storage: Storage, private loadingCtrl: LoadingController, private toastCtrl: ToastController) {
     this.presentLoading();
   }
 
@@ -38,6 +39,9 @@ export class ReceiptsPage {
         }else{
           this.presentToast(msg);
         }
+    },error => {
+      if(error.status == 0)
+        this.presentAlert('Unable to connect with server. Check your internet connection and try again!');
     });
   }
 
@@ -61,6 +65,22 @@ export class ReceiptsPage {
     });
     toast.present();
  }
-
+ presentAlert(msg) {
+  let alert = this.alertCtrl.create({
+    title: 'WHOOPS!',
+    message: msg,
+    buttons: [
+      {
+        text: 'OK',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }
+    
+    ]
+  });
+  alert.present();
+}
 
 }

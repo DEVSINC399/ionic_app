@@ -1,8 +1,10 @@
 <ion-header>
   <ion-navbar navbar-primary>
     <ion-title>
-        Welcome
+        Welcome 
     </ion-title>
+    <ion-buttons end *ngIf="ad_to_show"><button id="modal"><ion-icon name="ribbon" (click)="openModal(ad)"></ion-icon></button></ion-buttons>
+    
   </ion-navbar>
 </ion-header>
 
@@ -10,70 +12,106 @@
   <ion-list>
     <ion-grid>
       <ion-row>
-        <ion-col col-lg-6 col-md-6 col-xs-12 col-sm-12 class="plan-left">
+        <ion-col col-lg-6 col-md-12 col-xs-12 col-sm-12 class="plan-left">
             <ion-card class="cards" (click)="getWasteRequest()">
                 <ion-card-header class="card1-header">
                    <ion-card-title class="card-heading">
                      <ion-icon name="basket"></ion-icon>
-                     Dry Waste Request  
+                     Recyclable Waste System 
                   </ion-card-title> 
                 </ion-card-header>
                 
                 <ion-card-content class="card1-body">
-                  Keep close to Nature's heart...
-                 
+                  Want to join!
                 </ion-card-content>
               </ion-card>
         </ion-col>
-        <ion-col col-lg-6 col-md-6 col-xs-12 col-sm-12 class="plan-left">
+        
+        <ion-col col-lg-6 col-md-12 col-xs-12 col-sm-12 class="plan-left">
             <ion-card class="cards" (click)="getSponsershipsRequest()">
                 <ion-card-header class="card1-header">
                   <ion-card-title class="card-heading">
-                    <ion-icon id="crd-logo" name="card"></ion-icon>
-                    Sponsorships Request
+                    <ion-icon id="crd-logo" name="people"></ion-icon>
+                    Educate a Child Program
                   </ion-card-title>
                 </ion-card-header>
                 
                 <ion-card-content class="card1-body">
-                  Keep close to Nature's heart...
+                 Join and Contribute!
                  
                 </ion-card-content>
               </ion-card>
         </ion-col>
-      </ion-row>
-        <ion-row>
-          <ion-col col-lg-6 col-md-6 col-xs-12 col-sm-12 class="plan-left">
+
+          <ion-col col-lg-6 col-md-12 col-xs-12 col-sm-12 class="plan-left">
               <ion-card class="cards" (click)="getDonationsRequest()">
                   <ion-card-header class="card1-header">
                     <ion-card-title class="card-heading">
                       <ion-icon id="crd-logo" name="cash"></ion-icon>
-                      Donations Request
+                      Financial Support
                     </ion-card-title>
                   </ion-card-header>
                   
                   <ion-card-content class="card1-body">
-                    Keep close to Nature's heart...
+                    Donations, Zakat, Sadqat, Kind
                    
                   </ion-card-content>
                 </ion-card>
           </ion-col>
-          <ion-col col-lg-6 col-md-6 col-xs-12 col-sm-12 class="plan-left">
+
+          <ion-col col-lg-6 col-md-12 col-xs-12 col-sm-12 class="plan-left" *ngIf="!logged_in">
               <ion-card class="cards" (click)="getLoginDetails()">
                   <ion-card-header class="card1-header">
                     <ion-card-title class="card-heading">
-                      <ion-icon name="contacts" id="crd-logo" item-left></ion-icon>
+                      <ion-icon name="lock" id="crd-logo" item-left></ion-icon>
                       <span>Log In</span>
                     </ion-card-title>
                   </ion-card-header>
                   
                   <ion-card-content class="card1-body">
-                   Don't have Account?
+                   Already registered to Aabroo?
                    
                   </ion-card-content>
                 </ion-card>
           </ion-col>
+
+          <ion-col col-lg-6 col-md-12 col-xs-12 col-sm-12 class="plan-left" *ngIf="logged_in">
+              <ion-card class="cards" (click)="getDashboardSection()">
+                  <ion-card-header class="card1-header">
+                    <ion-card-title class="card-heading">
+                      <ion-icon name="pie" id="crd-logo" item-left></ion-icon>
+                      <span>Dashboard</span>
+                    </ion-card-title>
+                  </ion-card-header>
+                  
+                  <ion-card-content class="card1-body">
+                   Get into your account
+                   
+                  </ion-card-content>
+                </ion-card>
+          </ion-col>
+
+          <ion-col col-lg-6 col-md-12 col-xs-12 col-sm-12 class="plan-left">
+              <ion-card class="cards" (click)="getComplaintsSection()">
+                  <ion-card-header class="card1-header">
+                    <ion-card-title class="card-heading">
+                      <ion-icon id="crd-logo" name="archive"></ion-icon>
+                      Complaints & Suggestions
+                    </ion-card-title>
+                  </ion-card-header>
+                  
+                  <ion-card-content class="card1-body">
+                    We are ready to compliance!
+                   
+                  </ion-card-content>
+                </ion-card>
+          </ion-col>
+          <!-- <ion-col col-lg-6 col-md-6 col-xs-12 col-sm-12 class="plan-left">
+             
+          </ion-col> -->
         </ion-row>
       </ion-grid>
     </ion-list>
 
 </ion-content>
+

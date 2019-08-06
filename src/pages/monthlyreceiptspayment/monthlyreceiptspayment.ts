@@ -23,16 +23,21 @@ export class MonthlyreceiptspaymentPage {
   id: string = '';
   receipt_months: any[] = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl: LoadingController, private toastCtrl: ToastController, private storage: Storage, private postPvdr: PostProvider) {
-    
-  }
-
-  ionViewWillEnter(){
+  constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl: LoadingController, 
+    private toastCtrl: ToastController, private storage: Storage, private postPvdr: PostProvider, private alertCtrl: AlertController) {
     this.storage.get("session-storage").then( (res) => {
       this.id = res.id;
       this.year = this.navParams.get("year");
       this.load();
-    });
+    }); 
+  }
+
+  ionViewWillEnter(){
+    // this.storage.get("session-storage").then( (res) => {
+    //   this.id = res.id;
+    //   this.year = this.navParams.get("year");
+    //   this.load();
+    // });
   }
 
   load(){
@@ -49,6 +54,9 @@ export class MonthlyreceiptspaymentPage {
         }else{
           this.presentToast(msg);
         }
+    },error => {
+      if(error.status == 0)
+        this.presentAlert('Unable to connect with server. Check your internet connection and try again!');
     });
   }
 
@@ -77,4 +85,21 @@ export class MonthlyreceiptspaymentPage {
     });
     toast.present();
  }
+ presentAlert(msg) {
+  let alert = this.alertCtrl.create({
+    title: 'WHOOPS!',
+    message: msg,
+    buttons: [
+      {
+        text: 'OK',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }
+    
+    ]
+  });
+  alert.present();
+}
 }

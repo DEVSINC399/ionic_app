@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { PostProvider } from '../../providers/postprovider/postprovider';
 
@@ -24,7 +24,8 @@ export class ResultPage {
   extras: any = [];
   subject_results: any = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, private loadingCtrl: LoadingController, private toastCtrl: ToastController, private postPvdr: PostProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, private loadingCtrl: LoadingController,
+     private toastCtrl: ToastController, private postPvdr: PostProvider, private alertCtrl: AlertController) {
   }
 
   ionViewWillEnter(){
@@ -53,6 +54,9 @@ export class ResultPage {
         }else{
           this.presentToast(msg);
         }
+    },error => {
+      if(error.status == 0)
+        this.presentAlert('Unable to connect with server. Check your internet connection and try again!');
     });
   }
 
@@ -78,5 +82,22 @@ export class ResultPage {
 
   gotoMainScreen(){
     this.navCtrl.popToRoot();
+  }
+  presentAlert(msg) {
+    let alert = this.alertCtrl.create({
+      title: 'WHOOPS!',
+      message: msg,
+      buttons: [
+        {
+          text: 'OK',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      
+      ]
+    });
+    alert.present();
   }
 }

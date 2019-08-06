@@ -1,0 +1,30 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Feedback</ion-title>
+  </ion-navbar>
+ </ion-header>
+ <ion-content padding style="margin-top:15px;">
+  <ion-list>
+    <ion-item>
+      <ion-label floating padding-left><ion-icon name="person" style="margin-right: 3px;"></ion-icon>Name (optional)</ion-label>
+     <ion-input type="text" class="input-fields"[(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating padding-left><ion-icon name="create" style="margin-right: 3px;"></ion-icon>Subject*</ion-label>
+     <ion-input type="text" class="input-fields"[(ngModel)]="subject"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating padding-left><ion-icon name="create" style="margin-right: 3px;"></ion-icon>Description*</ion-label>
+      <ion-textarea class="input-fields"[(ngModel)]="content"></ion-textarea>
+   </ion-item>
+   <ion-item>
+     <button ion-button block secondary class="blue-button"(click)="complaintsend()">Send</button>
+   </ion-item>
+  </ion-list>
+ </ion-content>
+
+ <ion-footer fixed>
+  <img src="assets/imgs/app.png">
+ </ion-footer>
+ 

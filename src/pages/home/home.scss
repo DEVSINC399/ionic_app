@@ -1,20 +1,24 @@
 page-home {
-    .content{
+    
         background: #f4f4f4;
-    }
+
+    #modal {
+        margin-right: 15px;
+        font-size: 20px;
+        background: #f4f4f4;
+        border-radius: #0A6FB7 2px solid !important;
+        color: #0A6FB7;
+        // text-decoration: none;
+        // display: inline-block;
+        // justify-content: flex-end;
+      }
     .cards{
         border-radius: 7px;
     }
 
-    // .card-heading{
-    //     color:white !important;
-    //  font-size: 18px;
-    //     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
-    // }
     .card-heading{
         color:#0A6FB7 !important;
-     font-size: 18px;
+        font-size: 18px;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
     }
@@ -25,30 +29,11 @@ page-home {
         }
     }
 
-    // #crd-text{
-    //     font-size: 20px;
-    //     color: white;
-    // }
-    #crd-text{
-        font-size: 20px;
-        color: #0A6FB7;
-    }
-    .card-heading{
-        font-size: 20px;
-    }
-
-    // .card1-header{
-    //     background:	#008000;
-    // }
-    // .card1-body{
-    //     padding-top: 7px !important;
-    //     color: aliceblue;
-    //     background:	#006400;
-    // }
   
     .card1-header{
         background: white;
         border-bottom: rgb(106, 107, 107) 1px solid;
+        min-width: 400px;
     }
     .card1-body{
         padding-top: 7px !important;

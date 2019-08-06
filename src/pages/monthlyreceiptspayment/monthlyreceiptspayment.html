@@ -13,9 +13,9 @@
       
     <ion-list>
     
-        <ion-item *ngFor="let receipt_month of receipt_months" (click)="getPaymentReceipt(receipt_month)">
+        <button ion-item class="list" *ngFor="let receipt_month of receipt_months" (click)="getPaymentReceipt(receipt_month)">
           <ion-label>Payment in {{ receipt_month }}</ion-label>
-        </ion-item>
+        </button>
     
       </ion-list>
 </ion-content>

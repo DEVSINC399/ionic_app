@@ -1,7 +1,7 @@
 
 <ion-header>
   <ion-navbar>
-    <ion-title>Sponsorships Request</ion-title>
+    <ion-title>Sponsorship Request</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -9,102 +9,124 @@
    
     <ion-list>  
 
-        <ion-item>
-          <ion-label floating padding-left><ion-icon name="person" style="margin-right: 3px;"></ion-icon>Donor Name *</ion-label>
-         <ion-input type="text" class="input-fields"></ion-input>
-        </ion-item>
-        
-        <ion-item>
-            <ion-label floating padding-left><ion-icon name="pin" style="margin-right: 3px;"></ion-icon>Address *</ion-label>
-           <ion-input type="text" class="input-fields"></ion-input>
-        </ion-item>
+      <ion-item>
+        <ion-label floating padding-left><ion-icon name="person" style="margin-right: 3px;"></ion-icon>Sponsor Name *</ion-label>
+        <ion-input type="text" class="input-fields" [(ngModel)]="donorname"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+          <ion-label floating padding-left><ion-icon name="pin" style="margin-right: 3px;"></ion-icon>Address *</ion-label>
+          <ion-input type="text" class="input-fields" [(ngModel)]="address"></ion-input>
+      </ion-item>
 
-        <ion-item>
-            <ion-label floating padding-left><ion-icon name="card" style="margin-right: 3px;"></ion-icon>CNIC *</ion-label>
-           <ion-input type="text" class="input-fields"></ion-input>
-        </ion-item>
+      <ion-item>
+          <ion-label floating padding-left><ion-icon name="card" style="margin-right: 3px;"></ion-icon>CNIC *(with dashes)</ion-label>
+          <ion-input type="text" class="input-fields" [(ngModel)]="cnic"></ion-input>
+      </ion-item>
 
-        <ion-item>
-            <ion-label floating padding-left><ion-icon name="call" style="margin-right: 3px;"></ion-icon>Telephone Number</ion-label>
-           <ion-input type="text" class="input-fields"></ion-input>
-        </ion-item>
+      <ion-item>
+          <ion-label floating padding-left><ion-icon name="call" style="margin-right: 3px;"></ion-icon>Telephone Number</ion-label>
+          <ion-input type="text" class="input-fields" [(ngModel)]="telno"></ion-input>
+      </ion-item>
 
-        <ion-item>
-            <ion-label floating padding-left><ion-icon name="call" style="margin-right: 3px;"></ion-icon>Cell Number *</ion-label>
-           <ion-input type="text" class="input-fields"></ion-input>
-        </ion-item>
+      <ion-item>
+          <ion-label floating padding-left><ion-icon name="call" style="margin-right: 3px;"></ion-icon>Cell Number *</ion-label>
+          <ion-input type="text" class="input-fields" [(ngModel)]="cellno"></ion-input>
+      </ion-item>
 
-        <ion-item>
-            <ion-label floating padding-left><ion-icon name="mail" style="margin-right: 3px;"></ion-icon>Email</ion-label>
-           <ion-input type="email" class="input-fields"></ion-input>
-        </ion-item>
+      <ion-item>
+          <ion-label floating padding-left><ion-icon name="mail" style="margin-right: 3px;"></ion-icon>Email</ion-label>
+          <ion-input type="email" class="input-fields" [(ngModel)]="email"></ion-input>
+      </ion-item>
 
-        <ion-item>
-            <ion-label floating padding-left><ion-icon name="person" style="margin-right: 3px;"></ion-icon>No. of Child *</ion-label>
-           <ion-input type="text" class="input-fields"></ion-input>
-        </ion-item>
+      <ion-item>
+          <ion-label floating padding-left><ion-icon name="person" style="margin-right: 3px;"></ion-icon>No. of Child *</ion-label>
+          <ion-input type="text" class="input-fields" [(ngModel)]="noofchild"></ion-input>
+      </ion-item>
 
-        <ion-item>
-            <ion-label floating padding-left><ion-icon name="person" style="margin-right: 3px;"></ion-icon>Fee per Child *</ion-label>
-           <ion-input type="text" class="input-fields"></ion-input>
-        </ion-item>
-        </ion-list>
+      <ion-item>
+          <ion-label floating padding-left><ion-icon name="person" style="margin-right: 3px;"></ion-icon>Fee per Child *</ion-label>
+          <ion-input type="text" class="input-fields" [(ngModel)]="feeperchild"></ion-input>
+      </ion-item>
+    </ion-list>
 
-        <span class="color-gray">
-            <ion-label padding-left><ion-icon name="pin" style="margin-right: 3px;"></ion-icon>Area *</ion-label>
-        </span>
-        <ion-list>
-          <ion-item>
-            <ion-select class="input-fields" placeholder="Select Currency Type">
-            <ion-option value="1">DHA</ion-option>
-            <ion-option value="2">Workshop</ion-option>
-            <ion-option value="3">Askari</ion-option>
-         
-          </ion-select>
-        </ion-item>
-      </ion-list>
+    <ion-list>
+      <ion-label class="color-gray" padding-left>
+        <ion-icon name="pin" style="margin-right: 3px;"></ion-icon>Area *
+      </ion-label>
+      <ion-item>
+        <ion-select class="input-fields" id="area" name="area" placeholder="Select Area" [(ngModel)]="area">
+            <ion-option *ngFor="let area of areas" [value]="area.id">{{ area['name'] }}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
   
-      <span class="color-gray">
-        <ion-label padding-left><ion-icon name="cash" style="margin-right: 3px;"></ion-icon>Currency *</ion-label>
-      </span>
-        <ion-list>
-          <ion-item>
-            <ion-select class="input-fields" placeholder="Select Currency Type">
-            <ion-option value="1">Rupees</ion-option>
-            <ion-option value="2">Dollar</ion-option>
-            <ion-option value="3">Euro</ion-option>
-         
+    <span class="color-gray">
+      <ion-label padding-left><ion-icon name="cash" style="margin-right: 3px;" ></ion-icon>Currency *</ion-label>
+    </span>
+    <ion-list>
+        <ion-item>
+            <ion-select class="input-fields" id="currency" name="currency" placeholder="Select Currency" [(ngModel)]="currency">
+                <ion-option *ngFor="let currency of currencies" [value]="currency.id">{{ currency['name'] }}</ion-option>
           </ion-select>
-        </ion-item>
-      </ion-list>
+      </ion-item>
+    </ion-list>
 
-      <span class="color-gray">
-        <ion-label padding-left><ion-icon name="cash" style="margin-right: 3px;"></ion-icon>Donation Type *</ion-label>
-      </span>
-      <ion-list>
-          <ion-item>
-            <ion-select class="input-fields" placeholder="Select Payment Method">
+    <span class="color-gray">
+      <ion-label padding-left><ion-icon name="cash" style="margin-right: 3px;"></ion-icon>Donation Type *</ion-label>
+    </span>
+    <ion-list>
+        <ion-item>
+          <ion-select class="input-fields" placeholder="Select Donation Type" [(ngModel)]="donationtype">
             <ion-option value="1">Sadqat</ion-option>
             <ion-option value="2">Zakat</ion-option>
-            </ion-select>
-          </ion-item>
+          </ion-select>
+        </ion-item>
+    </ion-list>
+
+    <span class="color-gray">
+      <ion-label padding-left><ion-icon name="person" style="margin-right: 3px;"></ion-icon>Sponsor Type *</ion-label>
+    </span>
+    <ion-list>
+      <ion-item>
+        <ion-select class="input-fields" placeholder="Select Sponsor Type" [(ngModel)]="sponsertype">
+            <ion-option value="1">1 Month</ion-option>
+            <ion-option value="2">1 Quarter</ion-option>
+            <ion-option value="3">1 Year</ion-option>
+            <ion-option value="4">2 Months</ion-option>
+            <ion-option value="5">2 Years</ion-option>
+            <ion-option value="6">4 Months</ion-option>
+            <ion-option value="7">5 Months</ion-option>
+            <ion-option value="8">Half Yearly</ion-option>
+     
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+    <span class="color-gray">
+      <ion-label padding-left><ion-icon name="cash" style="margin-right: 3px;"></ion-icon>Payment Method *</ion-label>
+    </span>
+      <ion-list>
+        <ion-item>
+          <ion-select class="input-fields" placeholder="Select Payment Method" [(ngModel)]=paymentmethod>
+            <ion-option value="1">Online Transfer</ion-option>
+            <ion-option value="2">Cash Payment</ion-option>
+            <ion-option value="3">Cross Cheque</ion-option>
+          </ion-select>
+        </ion-item>
       </ion-list>
 
-      <span class="color-gray">
-        <ion-label padding-left><ion-icon name="cash" style="margin-right: 3px;"></ion-icon>Payment Method *</ion-label>
-      </span>
-        <ion-list>
-            <ion-item>
-              <ion-select class="input-fields" placeholder="Select Payment Method">
-              <ion-option value="1">Online Transfer</ion-option>
-              <ion-option value="2">Cash Payment</ion-option>
-              <ion-option value="3">Cross Cheque</ion-option>
-              </ion-select>
-            </ion-item>
-        </ion-list>
-  
+      <ion-list>
+        <ion-item>
+            <ion-label floating padding-left><ion-icon name="create" style="margin-right: 3px;"></ion-icon>Remarks</ion-label>
+            <ion-textarea class="input-fields"  [(ngModel)]="remarks"></ion-textarea> 
+        </ion-item>
+        <ion-item>
+          <button ion-button block secondary class="blue-button" (click)="sponsorshipRequest()">Send Request</button> 
+        </ion-item>
+      </ion-list>
    
-      <button ion-button block secondary class="blue-button">Send Request</button>
+      
 </ion-content>
 <ion-footer fixed>
     <img src="assets/imgs/app.png">

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController } from 'ionic-angular';
 import { ResultPage } from '../result/result';
 import { StudentresultsPage } from '../studentresults/studentresults';
 import { Storage } from '@ionic/storage';
@@ -15,18 +15,23 @@ import { PostProvider } from '../../providers/postprovider/postprovider';
 export class ResultsPage {
 
   id: string = '';
-  result_years: any = [];
+  result_years: any = [] =[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController,
               private storage: Storage, private postPvdr: PostProvider,
               private loadingCtrl: LoadingController, private toastCtrl: ToastController) {
+
+                this.storage.get("session-storage").then( (res) => {
+                  this.id = res.id;
+                  this.load();
+                });         
   }
 
   ionViewWillEnter(){
-    this.storage.get("session-storage").then( (res) => {
-      this.id = res.id;
-      this.load();
-    });
+    // this.storage.get("session-storage").then( (res) => {
+    //   this.id = res.id;
+    //   this.load();
+    // });
   }
 
   load(){
@@ -42,6 +47,9 @@ export class ResultsPage {
         }else{
           this.presentToast(msg);
         }
+    },error => {
+      if(error.status == 0)
+        this.presentAlert('Unable to connect with server. Check your internet connection and try again!');
     });
   }
 
@@ -64,5 +72,22 @@ export class ResultsPage {
 
   getStudentResults(year: string){
     this.navCtrl.push(StudentresultsPage, {"year": year });
+  }
+  presentAlert(msg) {
+    let alert = this.alertCtrl.create({
+      title: 'WHOOPS!',
+      message: msg,
+      buttons: [
+        {
+          text: 'OK',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      
+      ]
+    });
+    alert.present();
   }
 }

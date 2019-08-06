@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Admission form</ion-title>
+    <ion-title>Student Form</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -10,8 +10,264 @@
     <button ion-fab (click)="gotoMainScreen()"><ion-icon name="home"></ion-icon></button>
   </ion-fab>
 
+<ion-list class="plan-list">
+    <ion-grid>
+      <ion-row>
+        <ion-col text-center>
+          <img src="{{ student_detail.image ? 'http://aabroo.org/erp/'+student_detail.image : 'https://www.pngkey.com/png/detail/202-2024792_user-profile-icon-png-download-fa-user-circle.png'  }}" style="height: 100px; width: 100px; border-radius: 50%; margin-top: 10px;">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+            <div class="heading">Student's Information</div>
+          </ion-col>  
+        </ion-row>
+
+      <ion-row style="margin-top: 10px;">
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">Student Name</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+            <div>{{ student_detail['name'] }}</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">D.O.B</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+            <div>{{ student_detail['date_of_birth']}} </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">Admission Date</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+          <div>{{ student_detail['admission_date']}} </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+            <div style="font-weight: bold;">Age</div>
+          </ion-col>
+          <ion-col col-8 class="plan-left">
+              <div>{{extras['age']}} </div>
+          </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">Class</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+            <div> {{extras['class']}} </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">Roll No</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+            <div> {{student_detail['roll_no']}} </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">Gender</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+            <div> {{extras['gender']}} </div>
+        </ion-col>
+      </ion-row>
+            
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">Campus</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+            <div> {{extras['campus']}} </div>
+        </ion-col>
+      </ion-row>
+              
+      <ion-row>
+        <ion-col>
+          <div class="heading">Father's Information</div>
+        </ion-col>  
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">Name</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+            <div> {{ student_detail['father_name']}} </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">D.O.B</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+            <div> {{student_detail['father_date_of_birth']}} </div>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">Age</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+            <div> {{extras['father_age']}} </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">Qualification</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+            <div> {{extras['father_qualification']}} </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">Professional Skills</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+            <div> {{extras['father_professional']}} </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <div class="heading">Mother's Information</div>
+        </ion-col>  
+      </ion-row>
+  
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">Name</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+            <div> {{student_detail['mother_name']}} </div>
+        </ion-col>
+        </ion-row>
+
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">D.O.B</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+            <div> {{student_detail['mother_date_of_birth']}} </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">Age</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+            <div> {{extras['mother_age']}} </div>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">Qualification</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+            <div> {{extras['mother_qualification']}} </div>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">Professional Skills</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+            <div> {{ extras ['mother_professional']}} </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <div class="heading">General Information</div>
+        </ion-col>  
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">Religion</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+          <div> {{ extras ['religion']}} </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">No.of Siblings</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+          <div> {{ student_detail ['no_of_children']}} </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">Male</div>
+        </ion-col>
+        <ion-col col-2 class="plan-left">
+          <div> {{ student_detail ['male']}} </div>
+        </ion-col>
+        <ion-col col-4 class="plan-left">
+            <div style="font-weight: bold;">Female</div>
+        </ion-col>
+        <ion-col col-2 class="plan-left">
+            <div> {{ student_detail ['female'] }} </div>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">Guardian's Occupation</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+          <div>{{ extras ['guardian_occupation']}} </div>
+        </ion-col>
+      </ion-row>
+     
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">Residential Status</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+          <div>{{ extras ['residential']}}</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-4 class="plan-left">
+          <div style="font-weight: bold;">Financial Status</div>
+        </ion-col>
+        <ion-col col-8 class="plan-left">
+          <div>{{ extras ['income']}}</div>
+        </ion-col>
+        </ion-row>
+  
+    </ion-grid>
+</ion-list>
+  
 <!-- Default Segment -->
-<div>
+<!-- <div>
 <ion-segment [(ngModel)]="information" (ionChange)="segmentChanged($event)">
     <ion-segment-button value="student">Student's Info</ion-segment-button>
     <ion-segment-button value="father">Father's Info</ion-segment-button>
@@ -238,5 +494,5 @@
           </ion-row>   
         </ion-grid>
       </ion-list>
-</div>
+</div> -->
 </ion-content>

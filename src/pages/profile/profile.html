@@ -13,7 +13,7 @@
   <ion-row class="logo-row">
       <ion-col></ion-col>
       <ion-col width-65>
-        <img src="assets/imgs/ic_people.png">
+        <img src="assets/imgs/user.png">
       </ion-col>
       <ion-col></ion-col>
     </ion-row>
@@ -53,22 +53,25 @@
 
       <ion-item>
         <ion-label floating padding-left><ion-icon name="lock" style="margin-right: 3px;"></ion-icon>New Password</ion-label>
-        <ion-input type="password" class="input-fields"></ion-input>
+        <ion-input type="password" class="input-fields" [(ngModel)]="new_password"></ion-input>
       </ion-item>
       
       <ion-item>
         <ion-label floating padding-left><ion-icon name="lock" style="margin-right: 3px;"></ion-icon>Confirm Password</ion-label>
-        <ion-input type="password" class="input-fields"></ion-input>
+        <ion-input type="password" class="input-fields" [(ngModel)]="new_password_c"></ion-input>
       </ion-item>
 
       <ion-item class="current">
         <ion-label floating padding-left><ion-icon name="lock" style="margin-right: 3px;"></ion-icon>Current Password *</ion-label>
-        <ion-input type="password" class="input-fields" style="margin-bottom: 20px;"></ion-input>
+        <ion-input type="password" class="input-fields" style="margin-bottom: 20px;" [(ngModel)]="password"></ion-input>
       </ion-item>
-      <p class="para">* Authenticate to make changes</p>
+      <p class="para"> * Authenticate to make changes</p>
       
+      <ion-item>
+        <button ion-button block secondary class="blue-button" (click)="update()">Save</button>
+      </ion-item>
   </ion-list>  
-  <button ion-button block secondary class="blue-button">Save</button>
+
 </ion-content>
 <ion-footer fixed>
 <img src="assets/imgs/app.png">

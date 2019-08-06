@@ -9,12 +9,18 @@
 
 <ion-content padding>
 
-  <ion-list>
+  <ion-list *ngIf="receipt_years.length > 0">
     
-    <ion-item *ngFor="let receipt_year of receipt_years" (click)="gotoMonthlyReceiptsPayment(receipt_year.year)">
+    <button ion-item  class=" list" *ngFor="let receipt_year of receipt_years" (click)="gotoMonthlyReceiptsPayment(receipt_year.year)">
       <ion-label>Receipts {{ receipt_year.year }}</ion-label>
-    </ion-item>
+    </button>
 
   </ion-list>
+
+  <p class="no-record" *ngIf="receipt_years.length == 0">
+      <img src="assets/imgs/notfound2.png" style="height: 40%; width: 40%;">
+      <br>
+      No Record Found !
+  </p>
 
 </ion-content>

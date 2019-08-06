@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams, LoadingController, AlertController
 import { MainscreenPage } from '../mainscreen/mainscreen';
 import { PostProvider } from '../../providers/postprovider/postprovider';
 import { Storage } from '@ionic/storage';
+import { Network } from '@ionic-native/network';
+
 
 
 @IonicPage()
@@ -17,7 +19,7 @@ export class LoginPage implements OnInit {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController, 
     public alertCtrl: AlertController, public toastCtrl: ToastController, public postPvdr: PostProvider,
-    public storage: Storage) {
+    public storage: Storage, private network: Network) {
 
   }
 
@@ -31,6 +33,7 @@ export class LoginPage implements OnInit {
   }
 
   login(){
+    
     if(this.username != '' && this.password != ''){
       let body = {
         username: this.username,
@@ -47,7 +50,8 @@ export class LoginPage implements OnInit {
         }
         this.presentToast(msg);
       }, error => {
-        console.log(error);
+        if(error.status == 0)
+          this.presentAlert('Unable to connect with server. Check your internet connection and try again!');
       });
     }else{
       this.presentToast("Please fill the required fields.");
@@ -70,5 +74,24 @@ export class LoginPage implements OnInit {
       });
       toast.present();
    }
+
+   presentAlert(msg) {
+    let alert = this.alertCtrl.create({
+      title: 'WHOOPS!',
+      message: msg,
+      buttons: [
+        {
+          text: 'OK',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      
+      ]
+    });
+    alert.present();
+  }
+
 
 }

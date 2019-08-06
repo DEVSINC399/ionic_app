@@ -3,6 +3,7 @@
     border-radius: 15px;
     padding-left:7px !important;
     color: rgb(106, 107, 107);
+    width: 100%;
 
 }
 .blue-button{
@@ -32,6 +33,36 @@ ion-select.input-fields.select.select-md {
     width: 100%;
 }
 
+.list{
+    background: white !important;
+    color: black !important;
+}
+
+.no-record{
+     margin-top: 40%;
+    text-align: center;
+    font-size: 20px;
+    // border-top: 1px solid #909090;
+    // border-bottom: 1px solid #909090;
+    color: #0A6FB7;
+    padding-top: 10px;
+    // padding-bottom: 5px;
+}
+
+.h-40{
+    height: 40px;
+}
+
+.input-fields{
+    border: rgb(106, 107, 107) 1px solid;
+    border-radius: 10px;
+    padding-left:7px !important;
+    color: rgb(106, 107, 107);
+}
+
+.color-gray {
+    color: #999;
+}
 // .toolbar-background{
 //     background: #07548A;
 // }

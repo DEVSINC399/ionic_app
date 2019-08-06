@@ -23,6 +23,10 @@ import { PaymentreceiptPage } from '../pages/paymentreceipt/paymentreceipt';
 import { StudentresultsPage } from '../pages/studentresults/studentresults';
 import { ResultPage } from '../pages/result/result';
 import { AdmissionformPage } from '../pages/admissionform/admissionform';
+import { CsPage } from '../pages/cs/cs';
+import { ModalPage } from '../pages/modal/modal';
+import { Network } from '@ionic-native/network';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +45,8 @@ import { AdmissionformPage } from '../pages/admissionform/admissionform';
     PaymentreceiptPage, 
     StudentresultsPage,
     ResultPage,
-    AdmissionformPage
+    AdmissionformPage, 
+    CsPage
   ],
   imports: [
     BrowserModule,
@@ -66,13 +71,16 @@ import { AdmissionformPage } from '../pages/admissionform/admissionform';
     PaymentreceiptPage, 
     StudentresultsPage,
     ResultPage, 
-    AdmissionformPage
+    AdmissionformPage, 
+    CsPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PostProvider
+    PostProvider,
+    Network
+    
   ]
 })
 export class AppModule {}

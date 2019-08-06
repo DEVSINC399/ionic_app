@@ -9,11 +9,18 @@
   </ion-header>
 
 <ion-content padding>
-  <ion-list>
+  <ion-list *ngIf="result_years.length > 0">
     
-    <ion-item *ngFor="let result_year of result_years" (click)="getStudentResults(result_year)">
+    <button ion-item class="list" *ngFor="let result_year of result_years" (click)="getStudentResults(result_year)">
       <ion-label>{{ result_year }}</ion-label>
-    </ion-item>
+    </button>
 
+    
   </ion-list>
+  <p class="no-record" *ngIf="result_years.length == 0">
+   
+    <img src="assets/imgs/notfound2.png" style="height: 40%; width: 40%;">
+      <br>
+      No Record Found !
+    </p>
 </ion-content>

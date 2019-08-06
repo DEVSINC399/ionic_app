@@ -3,17 +3,22 @@
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
           </button>
-      <ion-title>Admission Forms</ion-title>
+      <ion-title>Students</ion-title>
     </ion-navbar>
   </ion-header>
 
   <ion-content>
-      <ion-list>
+      <ion-list  *ngIf="students.length > 0">
     
-          <button ion-item *ngFor="let student of students" (click)="getAdmissionform(student.name)">
-            <ion-icon [name]="person" ion-left></ion-icon>
+          <button ion-item class="list" *ngFor="let student of students" (click)="getAdmissionform(student.id)">
+            <img src="{{ student.image ? 'http://aabroo.org/erp/'+student.image : 'https://www.pngkey.com/png/detail/202-2024792_user-profile-icon-png-download-fa-user-circle.png'  }}" style="height: 40px; width: 40px; border-radius: 50%;" item-left>
             <p>{{ student.name }}</p>
           </button>
       
         </ion-list>
+        <p class="no-record" *ngIf="students.length == 0">
+          <img src="assets/imgs/notfound2.png" style="height: 40%; width: 40%;">
+          <br>
+          No Record Found !
+          </p>
   </ion-content>

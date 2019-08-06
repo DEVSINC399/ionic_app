@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController } from 'ionic-angular';
 import { MainscreenPage } from '../mainscreen/mainscreen';
 import { PostProvider } from '../../providers/postprovider/postprovider';
 import { Storage } from '@ionic/storage';
@@ -19,7 +19,8 @@ export class PaymentreceiptPage {
   months_array: any = [1, 3, 12, 2, 24, 4, 5, 6];
   months_sematics_array: any = ['Monthly', 'Quarterly', 'Two Months', 'Two Years', 'Four Months', 'Five Months', 'Half Yearly'];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public postPvdr: PostProvider, public loadingCtrl: LoadingController, public storage: Storage, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public postPvdr: PostProvider, 
+    public loadingCtrl: LoadingController, public storage: Storage, public toastCtrl: ToastController, private alertCtrl: AlertController) {
   }
 
   ionViewWillEnter(){
@@ -47,6 +48,9 @@ export class PaymentreceiptPage {
         }else{
           this.presentToast(msg);
         }
+    },error => {
+      if(error.status == 0)
+        this.presentAlert('Unable to connect with server. Check your internet connection and try again!');
     });
   }
 
@@ -70,5 +74,21 @@ export class PaymentreceiptPage {
  gotoMainScreen(){
   this.navCtrl.popToRoot();
  }
-
+ presentAlert(msg) {
+  let alert = this.alertCtrl.create({
+    title: 'WHOOPS!',
+    message: msg,
+    buttons: [
+      {
+        text: 'OK',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }
+    
+    ]
+  });
+  alert.present();
+}
 }

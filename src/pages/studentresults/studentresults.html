@@ -1,16 +1,17 @@
 
 <ion-header>
   <ion-navbar>
-    <ion-title>Student Results</ion-title>
+    <ion-title>Students</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-list>
-    
-    <ion-item *ngFor="let student of students" (click)="getResult(student['id'])">
-      <ion-label>{{ student['name'] }}</ion-label>
-    </ion-item>
+
+    <button ion-item class="list" *ngFor="let student of students" (click)="getResult(student['id'])">
+      <img src="{{ student.image ? 'http://aabroo.org/erp/'+student.image : 'https://www.pngkey.com/png/detail/202-2024792_user-profile-icon-png-download-fa-user-circle.png'  }}" style="height: 40px; width: 40px; border-radius: 50%;" item-left>
+      <p>{{ student.name }}</p>
+    </button>
 
   </ion-list>
 </ion-content>
