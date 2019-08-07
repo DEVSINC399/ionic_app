@@ -24,7 +24,6 @@ import { StudentresultsPage } from '../pages/studentresults/studentresults';
 import { ResultPage } from '../pages/result/result';
 import { AdmissionformPage } from '../pages/admissionform/admissionform';
 import { CsPage } from '../pages/cs/cs';
-import { ModalPage } from '../pages/modal/modal';
 import { Network } from '@ionic-native/network';
 
 

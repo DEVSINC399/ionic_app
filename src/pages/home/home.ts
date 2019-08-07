@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams, LoadingController, ModalController } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
 import { DwrPage } from '../dwr/dwr';
 import { SrPage } from '../sr/sr';
 import { DrPage } from '../dr/dr';
@@ -7,7 +7,6 @@ import { LoginPage } from '../login/login';
 import { Storage } from '@ionic/storage';
 import { CsPage } from '../cs/cs';
 import { MainscreenPage } from '../mainscreen/mainscreen';
-import { ModalPage } from '../modal/modal';
 import { PostProvider } from '../../providers/postprovider/postprovider';
 
 @Component({
