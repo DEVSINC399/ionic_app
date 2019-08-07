@@ -83,7 +83,8 @@ export class ResultPage {
   gotoMainScreen(){
     this.navCtrl.popToRoot();
   }
-  presentAlert(msg) {
+
+  presentAlert(msg: string) {
     let alert = this.alertCtrl.create({
       title: 'WHOOPS!',
       message: msg,
