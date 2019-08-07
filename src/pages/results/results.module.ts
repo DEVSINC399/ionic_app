@@ -4,7 +4,7 @@ import { ResultsPage } from './results';
 
 @NgModule({
   declarations: [
-    ResultsPage,
+    
   ],
   imports: [
     IonicPageModule.forChild(ResultsPage),

@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DrPage } from '../dr/dr';
-import { DwrPage } from '../dwr/dwr';
-import { SrPage } from '../sr/sr';
+import { IonicPage } from 'ionic-angular';
 import { ResultsPage } from '../results/results';
 import { ReceiptsPage } from '../receipts/receipts';
 import { AdmissionformsPage } from '../admissionforms/admissionforms';

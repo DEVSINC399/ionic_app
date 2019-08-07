@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, LoadingController, AlertController } from 'ionic-angular';
 import { PostProvider } from '../../providers/postprovider/postprovider';
-import { CachedResourceLoader } from '@angular/platform-browser-dynamic/src/resource_loader/resource_loader_cache';
 import { Storage } from '@ionic/storage';
 import { Area } from '../../models/area.model';
 import { Currency } from '../../models/currency.model';

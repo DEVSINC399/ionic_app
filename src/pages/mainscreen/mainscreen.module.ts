@@ -4,7 +4,7 @@ import { MainscreenPage } from './mainscreen';
 
 @NgModule({
   declarations: [
-    MainscreenPage,
+    
   ],
   imports: [
     IonicPageModule.forChild(MainscreenPage),

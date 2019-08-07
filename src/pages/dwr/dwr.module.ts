@@ -4,7 +4,7 @@ import { DwrPage } from './dwr';
 
 @NgModule({
   declarations: [
-    DwrPage,
+    
   ],
   imports: [
     IonicPageModule.forChild(DwrPage),

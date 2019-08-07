@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController } from 'ionic-angular';
 import { MonthlyreceiptspaymentPage } from '../monthlyreceiptspayment/monthlyreceiptspayment';
 import { PostProvider } from '../../providers/postprovider/postprovider';

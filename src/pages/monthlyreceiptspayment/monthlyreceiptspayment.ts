@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, AlertController, ToastController } from 'ionic-angular';
 import { PaymentreceiptPage } from '../paymentreceipt/paymentreceipt';
-import { MainscreenPage } from '../mainscreen/mainscreen';
 import { Storage } from '@ionic/storage';
 import { PostProvider } from '../../providers/postprovider/postprovider';
 

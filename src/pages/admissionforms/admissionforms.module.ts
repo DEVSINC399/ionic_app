@@ -4,7 +4,7 @@ import { AdmissionformsPage } from './admissionforms';
 
 @NgModule({
   declarations: [
-    AdmissionformsPage,
+    
   ],
   imports: [
     IonicPageModule.forChild(AdmissionformsPage),

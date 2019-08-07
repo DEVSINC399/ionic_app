@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController } from 'ionic-angular';
-import { ResultPage } from '../result/result';
 import { StudentresultsPage } from '../studentresults/studentresults';
 import { Storage } from '@ionic/storage';
 import { PostProvider } from '../../providers/postprovider/postprovider';

@@ -4,7 +4,7 @@ import { CsPage } from './cs';
 
 @NgModule({
   declarations: [
-CsPage,
+
   ],
   imports: [
     IonicPageModule.forChild(CsPage),

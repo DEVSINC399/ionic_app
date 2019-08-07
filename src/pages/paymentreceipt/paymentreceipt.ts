@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController } from 'ionic-angular';
-import { MainscreenPage } from '../mainscreen/mainscreen';
 import { PostProvider } from '../../providers/postprovider/postprovider';
 import { Storage } from '@ionic/storage';
 
